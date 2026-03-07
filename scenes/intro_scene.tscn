@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://s5s6mh4w7ceg" path="res://scripts/intro_scene.gd" id="1_xmg1o"]
 [ext_resource type="Texture2D" uid="uid://cukc614hbu3tu" path="res://assets/images/splash/image3-Sheet.png" id="2_0y5sa"]
+[ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/bg.png" id="2_gsw8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y5sa"]
 atlas = ExtResource("2_0y5sa")
@@ -41,6 +42,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_xmg1o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1293887293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gsw8x")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="Splash" type="AnimatedSprite2D" parent="." unique_id=171923]
 position = Vector2(639, 346)
