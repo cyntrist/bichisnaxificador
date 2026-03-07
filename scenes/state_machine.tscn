@@ -10,12 +10,15 @@
 [node name="State Machine" type="Node" unique_id=1764933967]
 script = ExtResource("1_nj0rb")
 scenes = Array[PackedScene]([ExtResource("2_a0fpy"), ExtResource("4_okvjo")])
+initial_scene = ExtResource("2_a0fpy")
 
 [node name="Scenes" type="Node" parent="." unique_id=138193595]
 
 [node name="Fade" parent="." unique_id=1845705408 instance=ExtResource("5_yux3b")]
+visible = false
 
 [node name="Shader" parent="." unique_id=383879478 instance=ExtResource("2_6rk0d")]
+visible = false
 
 [node name="Sound" type="Node" parent="." unique_id=1246444031]
 script = ExtResource("7_s46hd")

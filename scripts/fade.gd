@@ -4,7 +4,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.on_transition_begin.connect(transition)
+#	Global.on_transition_begin.connect(transition)
 	pass
 
 ## Iniciar fade in

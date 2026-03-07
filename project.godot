@@ -61,4 +61,4 @@ locale/translations=PackedStringArray("res://localization/Example/mi_proyecto_tr
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.09411765, 0.09411765, 0.09019608, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

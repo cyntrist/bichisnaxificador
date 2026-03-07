@@ -2,26 +2,25 @@ extends Node
 
 @export_category("Array de escenas en el orden de Global.Scenes")
 @export var scenes: Array[PackedScene] = [] 
+@export var initial_scene : PackedScene
 @onready var fade = $Fade
 
 var currentScene : Scene
 @onready var sound = $Sound
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	## INICIALIZAR GLOBAL
 	Global.sm = self
 	Global.sound = sound
-	
-	## CONECTAR SEÑALES
 	Global.on_transition_end.connect(_on_fade_end)
-	Global.on_game_end.connect(_on_game_end)
+	Global.on_transition_begin.connect(_on_fade_begin)
+
+	currentScene = scenes[Global.next_scene].instantiate()
+	$Scenes.add_child(currentScene)
+	currentScene.on_enable()
 	
-	## PRIMER CAMBIO DE ESCENA
-	Global.change_scene(Global.Scenes.INTRO)
+	Global.current_scene = Global.next_scene
 	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -36,8 +35,31 @@ func _input(event):
 	if (scene != Global.Scenes.NULL):
 		Global.change_scene(scene)
 
-func _on_game_end():
-	pass
+func _on_fade_begin(speed = 1.0) -> void:
+	# escena a apagar
+	if currentScene:
+		var lastScene: Scene = currentScene
+		lastScene.on_disable()
+		var tween : Tween = create_tween()
+		tween.tween_property(lastScene, "modulate:a", 0, speed)
+		tween.finished.connect(func(): 
+			lastScene.queue_free()
+			currentScene.on_enable()
+			Global.current_scene = Global.next_scene
+		)
+		currentScene = scenes[Global.next_scene].instantiate()
+		currentScene.z_index = 0
+		lastScene.z_index = 1
+		$Scenes.add_child(currentScene)
+		$Scenes.move_child(currentScene, 0)
+#		$Scenes.add_child(currentScene)
+		
+	else:
+		# escena a encender
+		currentScene = scenes[Global.next_scene].instantiate()
+		$Scenes.add_child(currentScene)
+		currentScene.on_enable()
+		Global.current_scene = Global.next_scene
 
 func _on_fade_end() -> void: #justo antes del fadeout
 	# escena a apagar
