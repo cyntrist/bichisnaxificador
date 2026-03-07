@@ -39,7 +39,7 @@ func _input(event):
 func _on_game_end():
 	pass
 
-func _on_fade_end() -> void: #justo antes del fadeout, la idea es que esto sea un switch
+func _on_fade_end() -> void: #justo antes del fadeout
 	# escena a apagar
 	if currentScene:
 		currentScene.on_disable()
@@ -48,3 +48,5 @@ func _on_fade_end() -> void: #justo antes del fadeout, la idea es que esto sea u
 	currentScene = scenes[Global.next_scene].instantiate()
 	$Scenes.add_child(currentScene)
 	currentScene.on_enable()
+	
+	Global.current_scene = Global.next_scene
