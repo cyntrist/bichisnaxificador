@@ -51,8 +51,7 @@ func _on_fade_begin(speed = 1.0) -> void:
 		currentScene.z_index = 0
 		lastScene.z_index = 1
 		$Scenes.add_child(currentScene)
-		$Scenes.move_child(currentScene, 0)
-#		$Scenes.add_child(currentScene)
+#		$Scenes.move_child(currentScene, 0)
 		
 	else:
 		# escena a encender

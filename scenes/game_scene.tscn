@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/bg.png" id="2_onqr8"]
+[ext_resource type="Texture2D" uid="uid://cu24tmm4ef3d2" path="res://assets/images/circle_cross.png" id="3_bw6k5"]
+[ext_resource type="Script" uid="uid://c08a1bux7opgl" path="res://scripts/dot.gd" id="4_y3j0m"]
 
 [node name="GameScene" type="Control" unique_id=1122993165]
 layout_mode = 3
@@ -23,3 +25,13 @@ grow_vertical = 2
 texture = ExtResource("2_onqr8")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Dots" type="Sprite2D" parent="." unique_id=1706308496]
+modulate = Color(0.16470589, 0.32941177, 0.5921569, 0.32941177)
+texture_repeat = 2
+position = Vector2(640, 360)
+texture = ExtResource("3_bw6k5")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+script = ExtResource("4_y3j0m")
+speed = 33.0
