@@ -1,0 +1,36 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cc1hhlbnvd74q"
+path="res://.godot/imported/BubbleboddyNeue-Thin Trial.ttf-51a87b64e5b3a5f0175b4693ac48ff4d.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/BubbleboddyNeue-Thin Trial.ttf"
+dest_files=["res://.godot/imported/BubbleboddyNeue-Thin Trial.ttf-51a87b64e5b3a5f0175b4693ac48ff4d.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
