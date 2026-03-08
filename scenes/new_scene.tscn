@@ -5,9 +5,47 @@
 [ext_resource type="PackedScene" uid="uid://b541gsu1w4v40" path="res://scenes/dibujar.tscn" id="2_gysvl"]
 [ext_resource type="Texture2D" uid="uid://bu2fauut8c3ke" path="res://assets/images/ui/Swatch.png" id="2_h2hj6"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="2_qvyla"]
+[ext_resource type="Texture2D" uid="uid://dcdck46id5av7" path="res://assets/images/ui/ConflictSticker.png" id="2_ra1e3"]
 [ext_resource type="Texture2D" uid="uid://dbvfsvogfl8j1" path="res://assets/images/ui/retry_button_only.png" id="3_q6t1g"]
 [ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="3_ra1e3"]
-[ext_resource type="Texture2D" uid="uid://bmhyuvnq3jbpw" path="res://assets/images/ui/trapExplosion.png" id="4_urooo"]
+
+[sub_resource type="Animation" id="Animation_h2hj6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cross:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ra1e3"]
+resource_name = "rotate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cross:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(0.5, -2, 2, 1),
+"update": 0,
+"values": [0.0, -0.17453292519943295, 0.17453292519943295, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urooo"]
+_data = {
+&"RESET": SubResource("Animation_h2hj6"),
+&"rotate": SubResource("Animation_ra1e3")
+}
 
 [node name="NewScene" type="Control" unique_id=521462308]
 layout_mode = 3
@@ -17,6 +55,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iw84y")
+
+[node name="Cross" type="TextureRect" parent="." unique_id=1720117065]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 255.0
+offset_right = 755.0
+offset_bottom = 475.0
+scale = Vector2(1.8, 1.8)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_ra1e3")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Bicho" type="CenterContainer" parent="." unique_id=1971951069]
 layout_mode = 0
@@ -72,17 +122,6 @@ theme_override_fonts/font = ExtResource("3_ra1e3")
 theme_override_font_sizes/font_size = 111
 text = "Mantequilla"
 
-[node name="Cross" type="TextureRect" parent="." unique_id=1720117065]
-visible = false
-layout_mode = 0
-offset_left = 535.0
-offset_top = 238.0
-offset_right = 755.0
-offset_bottom = 458.0
-texture = ExtResource("4_urooo")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="Retry" type="Control" parent="." unique_id=1918409153]
 anchors_preset = 0
 offset_left = 553.0
@@ -129,6 +168,9 @@ offset_right = 1188.0
 offset_bottom = 220.0
 scale = Vector2(0.9, 0.9)
 text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡Crea un bichisnax![/wave][/rainbow]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=906063116]
+libraries/ = SubResource("AnimationLibrary_urooo")
 
 [connection signal="button_down" from="Retry/Button" to="." method="_on_retry_button_down"]
 [connection signal="button_up" from="Retry/Button" to="." method="_on_repeat_button_up"]

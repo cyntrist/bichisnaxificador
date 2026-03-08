@@ -110,7 +110,7 @@ func set_bgm_volume_db(db: float) -> void:
 #=== EFECTOS (SFX) ===
 
 @warning_ignore("shadowed_variable_base_class")
-func play_sfx(name: String, pitch_variation := 0.0) -> void:
+func play_sfx(name: String, pitch_variation := 0.0, range = true) -> void:
 	if not sfx_tracks.has(name):
 		push_warning("SFX '%s' no encontrado" % name)
 		return
@@ -122,8 +122,10 @@ func play_sfx(name: String, pitch_variation := 0.0) -> void:
 	player.stream = sfx_tracks[name]
 	player.volume_db = sfx_volume_db
 	
-	if pitch_variation > 0.0:
+	if pitch_variation > 0.0 and range:
 		player.pitch_scale = 1.0 + randf_range(-pitch_variation, pitch_variation)
+	elif pitch_variation > 0.0 and not range:
+		player.pitch_scale = pitch_variation
 	else:
 		player.pitch_scale = 1.0
 	

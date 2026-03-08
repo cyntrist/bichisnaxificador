@@ -4,11 +4,14 @@ extends Scene
 @onready var retry_button : TextureButton = $Retry/Button
 @onready var retry : Control = $Retry
 @onready var retry_button_shape : TextureRect = $Retry/Shape
+@onready var cross : TextureRect = $Cross
 @onready var dibujar : RichTextLabel = $Dibujar
 @onready var bicho : CenterContainer = $Bicho
 @onready var bicho_texto : Label = $Bicho/Margenes/Texto
 @onready var comida : CenterContainer = $Comida
 @onready var comida_texto : Label = $Comida/Margenes/Texto
+@onready var animator : AnimationPlayer = $AnimationPlayer
+var rotating : bool = false
 var pegado_scale = Vector2(0.7,0.7)
 var big_scale = Vector2(0.85,0.85)
 var tween_comida : Tween
@@ -26,6 +29,8 @@ var tween_hover_duration = 0.2
 
 
 var nombres_insectos := [
+	"Masca",
+	"Ronda",
 	"Mosca",
 	"Mosquito",
 	"Termita",
@@ -114,6 +119,7 @@ var nombres_comidas := [
 ]
 
 func _ready() -> void:
+	cross.visible = false
 	retry.visible = false
 	dibujar.visible = false
 	comida.visible = false
@@ -131,6 +137,37 @@ func on_enable() -> void:
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(dibujar, "scale", Vector2(0.9,0.9), 1.5)
+	tween.finished.connect(mostrar_cruz)
+	pass
+	
+	
+func mostrar_cruz():
+	## VERSION PEGADA:
+#	if cross.visible: return
+#	cross.modulate = Color(1,1,1,1)
+#	cross.visible = true 
+#	cross.scale = Vector2(2,2)
+#	
+#	var tween2 = create_tween()
+#	tween2.set_trans(Tween.TRANS_BACK)
+#	tween2.set_ease(Tween.EASE_IN)
+#	tween2.tween_property(cross, "scale", Vector2(1.8,1.8), 0.2)
+#	tween2.finished.connect(mostrar_bicho)
+
+	if cross.visible: return
+	cross.modulate = Color(1,1,1,0)
+	cross.visible = true 
+	cross.scale = Vector2(1.5,1.5)
+	
+	var tween2 = create_tween()
+	tween2.set_trans(Tween.TRANS_SINE)
+	tween2.set_ease(Tween.EASE_IN_OUT)
+	tween2.tween_property(cross, "scale", Vector2(1.8,1.8), 0.2)
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(cross, "modulate", Color(1,1,1,1), 0.5)
 	tween.finished.connect(mostrar_bicho)
 	pass
 	
@@ -145,14 +182,6 @@ func mostrar_bicho():
 	tween_bicho.set_ease(Tween.EASE_OUT)
 	tween_bicho.tween_property(bicho, "scale", pegado_scale, 0.5)
 	tween_bicho.finished.connect(mostrar_comida)
-	pass
-	
-func mostrar_cruz():
-#	var tween = create_tween()
-#	tween.set_trans(Tween.TRANS_BACK)
-#	tween.set_ease(Tween.EASE_OUT)
-#	tween.tween_property(dibujar, "scale", Vector2(0.9,0.9), 1.5)
-#	tween.finished.connect(mostrar_comida)
 	pass
 	
 func mostrar_comida():
@@ -177,6 +206,11 @@ func mostrar_boton():
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(retry, "scale", Vector2(1.1,0.9), 0.5)
 	tween.tween_property(retry, "scale", Vector2(1.0,1.0), 0.5)
+	tween.finished.connect(func():
+		if not rotating:
+			rotating = true
+			animator.play("rotate")
+	)
 	pass
 	
 	
@@ -251,6 +285,14 @@ func _on_repeat_button_up() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_SPRING)
 	tween_click.tween_property(retry, "scale", Vector2(1,1), 0.25)
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(retry_button_shape, "rotation", TAU, 1.0).as_relative()
+	
+	mostrar_bicho()
+	
 	pass # Replace with function body.
 
 
@@ -264,9 +306,4 @@ func _on_retry_button_down() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
 	tween_click.tween_property(retry, "scale", Vector2(0.9,0.9), 0.1)
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(retry_button_shape, "rotation", TAU, 1.0).as_relative()
-	mostrar_bicho()
 	pass # Replace with function body.

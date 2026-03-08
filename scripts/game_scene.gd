@@ -246,7 +246,7 @@ func hide_logo(scene : Global.Scenes):
 	tween_logo_letras_escala = create_tween()
 	tween_logo_letras_escala.set_ease(Tween.EASE_IN)
 	tween_logo_letras_escala.set_trans(Tween.TRANS_BACK)
-	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 1.)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 1.3)
 
 	await Global.timer(0.2)
 	if tween_logo_letras:
