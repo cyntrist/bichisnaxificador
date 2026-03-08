@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxi4nw70np4l"]
 
 [ext_resource type="Script" uid="uid://cfhxduk7al4q7" path="res://scripts/new_scene.gd" id="1_iw84y"]
+[ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="2_qvyla"]
 
 [node name="NewScene" type="Control" unique_id=521462308]
 layout_mode = 3
@@ -10,3 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iw84y")
+
+[node name="Exit" type="TextureButton" parent="." unique_id=1493976788]
+modulate = Color(0.9607843, 1, 1, 0)
+layout_mode = 0
+offset_top = -13.0
+offset_right = 128.0
+offset_bottom = 115.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_qvyla")
+
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
+[connection signal="button_up" from="Exit" to="." method="_on_exit_button_up"]
+[connection signal="mouse_entered" from="Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="." method="_on_exit_mouse_exited"]
