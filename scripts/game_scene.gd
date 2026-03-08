@@ -17,6 +17,11 @@ var tween_boton_nuevo : Tween
 var tween_logo_click1:Tween
 var tween_logo_click2:Tween
 
+var tween_hover : Tween
+var hover_scale = Vector2(1.1, 1.1)
+var default_scale = Vector2(1.0, 1.0)
+var tween_hover_duration = 0.2
+
 func _init() -> void:
 	pass
 
@@ -81,10 +86,50 @@ func _on_boton_button_up() -> void:
 	# restores the scale smoothly in 0.25 seconds
 	tween_logo_click1.tween_property($Logo/Fondo, "scale", Vector2(1,1), 0.25)
 	
-	tween_logo_click1 = create_tween()
-	tween_logo_click1.set_ease(Tween.EASE_OUT)
-	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
+	tween_logo_click2 = create_tween()
+	tween_logo_click2.set_ease(Tween.EASE_OUT)
+	tween_logo_click2.set_trans(Tween.TRANS_SPRING)
 	
 	# restores the scale smoothly in 0.25 seconds
-	tween_logo_click1.tween_property($Logo/Logo, "scale", Vector2(1,1), 0.25)
+	tween_logo_click2.tween_property($Logo/Logo, "scale", Vector2(1,1), 0.25)
+	pass # Replace with function body.
+
+
+func _on_aleatorio_mouse_entered() -> void:
+#	if tween_hover:
+#		tween_hover.kill()
+	tween_hover = create_tween()
+	tween_hover.set_trans(Tween.TRANS_SINE)
+	tween_hover.set_ease(Tween.EASE_OUT)
+	tween_hover.tween_property(boton_aleatorio, "scale", hover_scale, tween_hover_duration)
+	pass # Replace with function body.
+
+
+func _on_aleatorio_mouse_exited() -> void:
+#	if tween_hover:
+#		tween_hover.kill()
+	tween_hover = create_tween()
+	tween_hover.set_trans(Tween.TRANS_SINE)
+	tween_hover.set_ease(Tween.EASE_OUT)
+	tween_hover.tween_property(boton_aleatorio, "scale", default_scale, tween_hover_duration)
+	pass # Replace with function body.
+
+
+func _on_nuevo_mouse_entered() -> void:
+#	if tween_hover:
+#		tween_hover.kill()
+	tween_hover = create_tween()
+	tween_hover.set_trans(Tween.TRANS_SINE)
+	tween_hover.set_ease(Tween.EASE_OUT)
+	tween_hover.tween_property(boton_nuevo, "scale", hover_scale, tween_hover_duration)
+	pass # Replace with function body.
+
+
+func _on_nuevo_mouse_exited() -> void:
+#	if tween_hover:
+#		tween_hover.kill()
+	tween_hover = create_tween()
+	tween_hover.set_trans(Tween.TRANS_SINE)
+	tween_hover.set_ease(Tween.EASE_OUT)
+	tween_hover.tween_property(boton_nuevo, "scale", default_scale, tween_hover_duration)
 	pass # Replace with function body.
