@@ -12,6 +12,8 @@ signal on_enable(scene)
 signal on_disable(scene)
 @warning_ignore("unused_signal")
 signal on_game_end()
+@warning_ignore("unused_signal")
+signal start_text
 
 var sprites_folder: String = "res://assets/images/sprites"
 var bugsnaxs: Dictionary = {}

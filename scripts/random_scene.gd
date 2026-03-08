@@ -65,7 +65,7 @@ func choose():
 	chosen_text.text = format_name(key)
 	animator.play("chosen")
 	
-	var offset : float = 150
+	var offset : float = 0
 	var time : float = 0.2
 	
 	tween_chosen = create_tween()
@@ -137,4 +137,5 @@ func _on_exit_button_up() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "chosen":
 		animator.play("rotation")
+		$Dibujar.reveal_text()
 	pass # Replace with function body.

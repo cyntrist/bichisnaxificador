@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://cdxtbgta6wcjg" path="res://assets/images/ui/CharacterDialogue.png" id="85_gtulj"]
 [ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="86_2cxkw"]
 [ext_resource type="Texture2D" uid="uid://j8ss7eq0vdap" path="res://assets/images/sprites/incognito/WatermelonBallMysterySticker.png" id="86_j3gfd"]
+[ext_resource type="Script" uid="uid://cjkbfin3xidil" path="res://scripts/animated_text.gd" id="87_dbagd"]
 [ext_resource type="Texture2D" uid="uid://dn02io0863wdy" path="res://assets/images/sprites/incognito/WatermelonMysterySticker.png" id="87_g58oo"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="88_052ix"]
 [ext_resource type="Texture2D" uid="uid://li51g71nk8yw" path="res://assets/images/ui/MysterySticker.png" id="89_jf6gs"]
@@ -423,7 +424,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(0.30735904, 1.8, 5.091169, 4.1353097),
+"transitions": PackedFloat32Array(0.5, -2, 2, 1e-05),
 "update": 0,
 "values": [0.0, 0.3490658503988659, -0.3490658503988659, 0.0]
 }
@@ -446,7 +447,7 @@ script = ExtResource("1_25p0k")
 
 [node name="Bugsnax" type="Node2D" parent="." unique_id=250855813]
 visible = false
-position = Vector2(640, 360)
+position = Vector2(640, 320)
 
 [node name="Background" type="Sprite2D" parent="Bugsnax" unique_id=1403189369]
 position = Vector2(-6.1035156e-05, -3.0517578e-05)
@@ -462,13 +463,33 @@ animation = &"random"
 scale = Vector2(0.33398438, 0.33398438)
 texture = ExtResource("85_2cxkw")
 
+[node name="Dibujar" type="RichTextLabel" parent="." unique_id=1614261325]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 68.0
+offset_right = 1008.0
+offset_bottom = 223.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49019608)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_fonts/normal_font = ExtResource("86_2cxkw")
+theme_override_font_sizes/normal_font_size = 121
+bbcode_enabled = true
+text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡A dibujar![/wave][/rainbow]"
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("87_dbagd")
+
 [node name="Texto" type="Control" parent="." unique_id=1089702199]
 visible = false
 anchors_preset = 0
 offset_left = 646.0
-offset_top = 557.0
+offset_top = 550.0
 offset_right = 646.0
-offset_bottom = 557.0
+offset_bottom = 550.0
 
 [node name="Background" type="TextureRect" parent="Texto" unique_id=1023992879]
 layout_mode = 0
@@ -483,13 +504,13 @@ expand_mode = 1
 [node name="Label" type="Label" parent="Texto" unique_id=1958772771]
 layout_mode = 0
 offset_left = -152.0
-offset_top = -73.0
+offset_top = -82.0
 offset_right = 152.0
-offset_bottom = 76.0
+offset_bottom = 75.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("86_2cxkw")
-theme_override_font_sizes/font_size = 69
+theme_override_font_sizes/font_size = 73
 text = "Green
 Grapeskeeto"
 horizontal_alignment = 1
