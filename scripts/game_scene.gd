@@ -23,6 +23,9 @@ var hover_scale = Vector2(1.1, 1.1)
 var default_scale = Vector2(1.0, 1.0)
 var tween_hover_duration = 0.2
 
+
+var exiting : bool = false
+
 func _init() -> void:
 	pass
 
@@ -170,6 +173,9 @@ func _on_nuevo_button_up() -> void:
 
 
 func start_aleatorio():
+	if exiting: return
+	exiting = true
+
 	hide_aleatorio()
 	await Global.timer(0.2)
 	hide_nuevo()
@@ -178,6 +184,9 @@ func start_aleatorio():
 	pass
 
 func start_nuevo():
+	if exiting: return
+	exiting = true
+	
 	hide_nuevo()
 	await Global.timer(0.2)
 	hide_aleatorio()

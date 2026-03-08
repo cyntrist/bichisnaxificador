@@ -37,6 +37,7 @@ stretch_mode = 4
 
 [node name="Dots" parent="Scenes/Control" unique_id=2027057053 instance=ExtResource("5_s46hd")]
 position = Vector2(640, 360)
+speed = 20.0
 
 [node name="Sound" type="Node" parent="." unique_id=1246444031]
 script = ExtResource("7_s46hd")
