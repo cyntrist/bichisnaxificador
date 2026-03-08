@@ -28,7 +28,7 @@ func _input(event):
 	if event.is_action_pressed("1"):
 		scene = Global.Scenes.INTRO
 	if event.is_action_pressed("2"):
-		scene = Global.Scenes.GAME
+		scene = Global.Scenes.MENU
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()
 	if (scene != Global.Scenes.NULL):

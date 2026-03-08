@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://2fn8su01j5da" path="res://scenes/intro_scene.tscn" id="2_a0fpy"]
 [ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/ui/bg.png" id="4_a0fpy"]
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
+[ext_resource type="PackedScene" uid="uid://b1j0mm7w2ms77" path="res://scenes/random_scene.tscn" id="4_yux3b"]
+[ext_resource type="PackedScene" uid="uid://bxi4nw70np4l" path="res://scenes/new_scene.tscn" id="5_m6efm"]
 [ext_resource type="PackedScene" uid="uid://dl5mco075nbxf" path="res://scenes/dots.tscn" id="5_s46hd"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
 
 [node name="State Machine" type="Node" unique_id=1764933967]
 script = ExtResource("1_nj0rb")
-scenes = Array[PackedScene]([ExtResource("2_a0fpy"), ExtResource("4_okvjo")])
+scenes = Array[PackedScene]([ExtResource("2_a0fpy"), ExtResource("4_okvjo"), ExtResource("4_yux3b"), ExtResource("5_m6efm")])
 initial_scene = ExtResource("2_a0fpy")
 
 [node name="Scenes" type="Node" parent="." unique_id=138193595]
