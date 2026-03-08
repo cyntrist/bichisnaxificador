@@ -351,7 +351,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25p0k")
-random_duration = 5.0
 
 [node name="Bugsnax" type="Node2D" parent="." unique_id=250855813]
 visible = false
@@ -374,16 +373,16 @@ texture = ExtResource("85_2cxkw")
 [node name="Texto" type="Control" parent="." unique_id=1089702199]
 visible = false
 anchors_preset = 0
-offset_left = 660.0
+offset_left = 646.0
 offset_top = 557.0
-offset_right = 660.0
+offset_right = 646.0
 offset_bottom = 557.0
 
 [node name="Background" type="TextureRect" parent="Texto" unique_id=1023992879]
 layout_mode = 0
-offset_left = -333.0
+offset_left = -334.0
 offset_top = -96.0
-offset_right = 350.0
+offset_right = 349.0
 offset_bottom = 105.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("85_gtulj")
@@ -408,8 +407,9 @@ autowrap_mode = 2
 [node name="Exit" type="TextureButton" parent="." unique_id=505563549]
 modulate = Color(0.9607843, 1, 1, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -13.0
+offset_right = 128.0
+offset_bottom = 115.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("88_052ix")
 

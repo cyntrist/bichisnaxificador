@@ -63,15 +63,27 @@ func choose():
 	chosen_sprite.visible = true
 	chosen_text.text = format_name(key)
 	
+	var offset : float = 150
+	var time : float = 0.2
+	
 	tween_chosen = create_tween()
 	tween_chosen.set_trans(Tween.TRANS_BACK)
 	tween_chosen.set_ease(Tween.EASE_IN)
-	tween_chosen.tween_property(random_bug_root, "scale", Vector2(1,1), 0.5)
+	tween_chosen.tween_property(random_bug_root, "scale", Vector2(1,1), time)
+	var tween2 = create_tween()
+	tween2.set_trans(Tween.TRANS_SINE)
+	tween2.set_ease(Tween.EASE_IN)
+	tween2.tween_property(random_bug_root, "position:y", random_bug_root.position.y - offset, time)
+	
 	await Global.timer(0.2)
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(chosen_text_node, "scale", Vector2(0.8,0.8), 0.5)
+	tween.tween_property(chosen_text_node, "scale", Vector2(0.8,0.8), time)
+	var tween3 = create_tween()
+	tween3.set_trans(Tween.TRANS_SINE)
+	tween3.set_ease(Tween.EASE_IN)
+	tween3.tween_property(chosen_text_node, "position:y", chosen_text_node.position.y - offset, time)
 	pass
 	
 func on_disable() -> void:
