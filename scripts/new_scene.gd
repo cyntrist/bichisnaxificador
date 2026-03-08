@@ -9,8 +9,10 @@ extends Scene
 @onready var bicho_texto : Label = $Bicho/Margenes/Texto
 @onready var comida : CenterContainer = $Comida
 @onready var comida_texto : Label = $Comida/Margenes/Texto
-var pegado_scale = Vector2(0.75,0.75)
-var big_scale = Vector2(0.9,0.9)
+var pegado_scale = Vector2(0.7,0.7)
+var big_scale = Vector2(0.85,0.85)
+var tween_comida : Tween
+var tween_bicho : Tween
 @export var min_rotation : float = -5.0
 @export var max_rotation : float = 5.0
 var tween_hover : Tween
@@ -47,11 +49,12 @@ func mostrar_bicho():
 	bicho.visible = true
 	bicho.scale = big_scale
 	bicho.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(bicho, "scale", pegado_scale, 0.5)
-	tween.finished.connect(mostrar_comida)
+	if tween_bicho: tween_bicho.kill()
+	tween_bicho = create_tween()
+	tween_bicho.set_trans(Tween.TRANS_BACK)
+	tween_bicho.set_ease(Tween.EASE_OUT)
+	tween_bicho.tween_property(bicho, "scale", pegado_scale, 0.5)
+	tween_bicho.finished.connect(mostrar_comida)
 	pass
 	
 func mostrar_cruz():
@@ -66,11 +69,12 @@ func mostrar_comida():
 	comida.visible = true
 	comida.scale = big_scale
 	comida.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(comida, "scale", pegado_scale, 0.5)
-	tween.finished.connect(mostrar_boton)
+	if tween_comida: tween_comida.kill()
+	tween_comida = create_tween()
+	tween_comida.set_trans(Tween.TRANS_BACK)
+	tween_comida.set_ease(Tween.EASE_OUT)
+	tween_comida.tween_property(comida, "scale", pegado_scale, 0.5)
+	tween_comida.finished.connect(mostrar_boton)
 	pass
 
 func mostrar_boton():

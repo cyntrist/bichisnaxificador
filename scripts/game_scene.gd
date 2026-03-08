@@ -254,7 +254,7 @@ func hide_logo(scene : Global.Scenes):
 	tween_logo_letras = create_tween()
 	tween_logo_letras.set_ease(tween_ease_disable)
 	tween_logo_letras.set_trans(tween_trans_disable)
-	tween_logo_letras.tween_property(logo_letras, "position:y", -90, tween_speed)
+	tween_logo_letras.tween_property(logo_letras, "position:y", -100, tween_speed)
 	tween_logo_letras.finished.connect(func() -> void:
 		Global.change_scene(scene)
 	)
