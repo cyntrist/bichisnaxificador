@@ -119,7 +119,11 @@ stretch_mode = 4
 
 [connection signal="button_down" from="Logo/Boton" to="." method="_on_boton_button_down"]
 [connection signal="button_up" from="Logo/Boton" to="." method="_on_boton_button_up"]
+[connection signal="button_down" from="Botones/Aleatorio" to="." method="_on_aleatorio_button_down"]
+[connection signal="button_up" from="Botones/Aleatorio" to="." method="_on_aleatorio_button_up"]
 [connection signal="mouse_entered" from="Botones/Aleatorio" to="." method="_on_aleatorio_mouse_entered"]
 [connection signal="mouse_exited" from="Botones/Aleatorio" to="." method="_on_aleatorio_mouse_exited"]
+[connection signal="button_down" from="Botones/Nuevo" to="." method="_on_nuevo_button_down"]
+[connection signal="button_up" from="Botones/Nuevo" to="." method="_on_nuevo_button_up"]
 [connection signal="mouse_entered" from="Botones/Nuevo" to="." method="_on_nuevo_mouse_entered"]
 [connection signal="mouse_exited" from="Botones/Nuevo" to="." method="_on_nuevo_mouse_exited"]

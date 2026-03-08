@@ -133,3 +133,42 @@ func _on_nuevo_mouse_exited() -> void:
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_nuevo, "scale", default_scale, tween_hover_duration)
 	pass # Replace with function body.
+
+
+func _on_aleatorio_button_down() -> void:
+	if tween_logo_click1: 
+		tween_logo_click1.kill()
+	if tween_hover:
+		tween_hover.kill()
+	boton_aleatorio.scale = Vector2(0.9, 0.9)
+	pass # Replace with function body.
+
+
+func _on_aleatorio_button_up() -> void:
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
+	
+	# restores the scale smoothly in 0.25 seconds
+	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(1,1), 0.25)
+	pass # Replace with function body.
+
+
+func _on_nuevo_button_down() -> void:
+	if tween_logo_click1: 
+		tween_logo_click1.kill()
+	if tween_hover:
+		tween_hover.kill()
+	boton_nuevo.scale = Vector2(0.9, 0.9)
+	pass # Replace with function body.
+
+
+func _on_nuevo_button_up() -> void:
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
+	
+	# restores the scale smoothly in 0.25 seconds
+	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(1,1), 0.25)
+
+	pass # Replace with function body.
