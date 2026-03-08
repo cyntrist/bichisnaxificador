@@ -1,10 +1,14 @@
 extends RichTextLabel
 
-const FULL_TEXT := "[rainbow freq=0.18 sat=0.5 val=1 speed=0.05][wave amp=50 freq=5 connected=1]¡A dibujar![/wave][/rainbow]"
+const FULL_TEXT := "[bounce][rainbow freq=0.18 sat=0.5 val=1 speed=0.05][wave amp=50 freq=5 connected=1]¡A dibujar![/wave][/rainbow][/bounce]"
 
 @export var duration := 1.5
+const BounceTextEffect = preload("res://effects/bounce_text_effect.gd") #NO FUNCIONA
 
 func _ready():
+	bbcode_enabled = true
+	install_effect(BounceTextEffect.new()) # NO FUNCIONA
+	text = FULL_TEXT
 	visible_characters = 0
 
 func reveal_text():
