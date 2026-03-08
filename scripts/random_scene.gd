@@ -5,6 +5,7 @@ extends Scene
 @onready var chosen_sprite : Sprite2D = $Bugsnax/Chosen
 @onready var chosen_text : Label = $Texto/Label
 @onready var chosen_text_node : Control = $Texto
+@onready var animator : AnimationPlayer = $AnimationPlayer
 
 @onready var exit_button : TextureButton = $Exit
 var tween_hover : Tween
@@ -62,6 +63,7 @@ func choose():
 	chosen_text_node.visible = true
 	chosen_sprite.visible = true
 	chosen_text.text = format_name(key)
+	animator.play("chosen")
 	
 	var offset : float = 150
 	var time : float = 0.2
@@ -129,4 +131,10 @@ func _on_exit_button_up() -> void:
 	tween_click.set_trans(Tween.TRANS_SPRING)
 	tween_click.tween_property(exit_button, "scale", Vector2(1,1), 0.25)
 	Global.change_scene(Global.Scenes.MENU)
+	pass # Replace with function body.
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "chosen":
+		animator.play("rotation")
 	pass # Replace with function body.

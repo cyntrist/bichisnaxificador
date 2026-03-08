@@ -88,6 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://j8ss7eq0vdap" path="res://assets/images/sprites/incognito/WatermelonBallMysterySticker.png" id="86_j3gfd"]
 [ext_resource type="Texture2D" uid="uid://dn02io0863wdy" path="res://assets/images/sprites/incognito/WatermelonMysterySticker.png" id="87_g58oo"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="88_052ix"]
+[ext_resource type="Texture2D" uid="uid://li51g71nk8yw" path="res://assets/images/ui/MysterySticker.png" id="89_jf6gs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y38c6"]
 animations = [{
@@ -343,6 +344,97 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dbagd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bugsnax/Chosen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bugsnax/Chosen:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("85_2cxkw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bugsnax/Chosen:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yx3i0"]
+resource_name = "chosen"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bugsnax/Chosen:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bugsnax/Chosen:texture")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("89_jf6gs")]
+}
+
+[sub_resource type="Animation" id="Animation_jf6gs"]
+resource_name = "rotation"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bugsnax/Chosen:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(0.30735904, 1.8, 5.091169, 4.1353097),
+"update": 0,
+"values": [0.0, 0.3490658503988659, -0.3490658503988659, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7psx1"]
+_data = {
+&"RESET": SubResource("Animation_dbagd"),
+&"chosen": SubResource("Animation_yx3i0"),
+&"rotation": SubResource("Animation_jf6gs")
+}
+
 [node name="RandomScene" type="Control" unique_id=78983474]
 layout_mode = 3
 anchors_preset = 15
@@ -413,7 +505,11 @@ offset_bottom = 115.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("88_052ix")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1344419683]
+libraries/ = SubResource("AnimationLibrary_7psx1")
+
 [connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
 [connection signal="button_up" from="Exit" to="." method="_on_exit_button_up"]
 [connection signal="mouse_entered" from="Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="mouse_exited" from="Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
