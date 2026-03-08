@@ -48,5 +48,12 @@ func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 		#startCoolDown = true
 		Global.on_transition_begin.emit(speed)
 
-func timer(tiempo = 1.0):
+func timer(tiempo = 1.0) -> Signal:
 	return get_tree().create_timer(tiempo).timeout
+
+func tween():
+#	var tween := create_tween()
+#	tween.set_ease(Tween.EASE_IN_OUT)
+#	tween.set_trans(Tween.TRANS_SINE)
+#	tween.tween_property(self, "current_speed", new_dir, tween_duration)
+	pass

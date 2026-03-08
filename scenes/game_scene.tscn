@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
-[ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/bg.png" id="2_onqr8"]
-[ext_resource type="Texture2D" uid="uid://cu24tmm4ef3d2" path="res://assets/images/circle_cross.png" id="3_bw6k5"]
+[ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/ui/bg.png" id="2_onqr8"]
+[ext_resource type="Texture2D" uid="uid://cu24tmm4ef3d2" path="res://assets/images/ui/circle_cross.png" id="3_bw6k5"]
 [ext_resource type="Script" uid="uid://c08a1bux7opgl" path="res://scripts/dot.gd" id="4_y3j0m"]
+[ext_resource type="Texture2D" uid="uid://d3ph8cd2qcnv1" path="res://assets/images/logo_fondo.png" id="5_y3j0m"]
+[ext_resource type="Texture2D" uid="uid://chmd8stbphpak" path="res://assets/images/logo.png" id="6_rurhu"]
 
 [node name="GameScene" type="Control" unique_id=1122993165]
 layout_mode = 3
@@ -14,6 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_w5aja")
+tween_logo_trans = 10
+tween_logo_ease = 1
 
 [node name="Background" type="TextureRect" parent="." unique_id=1915737817]
 layout_mode = 1
@@ -35,3 +39,30 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1280, 720)
 script = ExtResource("4_y3j0m")
 speed = 33.0
+
+[node name="Logo" type="Control" parent="." unique_id=62139518]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fondo" type="TextureRect" parent="Logo" unique_id=1747312045]
+layout_mode = 0
+offset_left = 109.67871
+offset_top = -185.0
+offset_right = 1160.4796
+offset_bottom = -2.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_y3j0m")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Logo" type="TextureRect" parent="Logo" unique_id=1521783480]
+layout_mode = 0
+offset_left = 165.0
+offset_top = -90.0
+offset_right = 1131.4661
+offset_bottom = 4.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_rurhu")
+expand_mode = 2
+stretch_mode = 4
