@@ -7,4 +7,5 @@ func on_enable() -> void:
 	$Splash.play("loop")
 	await Global.timer(intro_duration)
 	Global.change_scene(Global.Scenes.MENU)
+	Global.sound.play_bgm("welcome", true)
 	pass
