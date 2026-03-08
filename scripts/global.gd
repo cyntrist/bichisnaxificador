@@ -71,6 +71,3 @@ func _load_bugsnaxes(path: String, target_dict: Dictionary) -> void:
 		if ResourceLoader.exists(full_path, "Texture2D"):
 			var key := file.get_basename()
 			target_dict[key] = load(full_path)
-		else:
-			# intentar como subcarpeta
-			_load_bugsnaxes(full_path, target_dict)

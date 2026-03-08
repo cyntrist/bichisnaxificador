@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4h3sudmfpom1"
-path="res://.godot/imported/Achievement_Candid_Cryptid.webp-88a5857eaf5714da757382ade2685354.ctex"
+path="res://.godot/imported/Achievement_Candid_Cryptid.webp-dbefd4dc90d22e94fadbd050ece70ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/Achievement_Candid_Cryptid.webp"
-dest_files=["res://.godot/imported/Achievement_Candid_Cryptid.webp-88a5857eaf5714da757382ade2685354.ctex"]
+source_file="res://assets/images/Achievement_Candid_Cryptid.webp"
+dest_files=["res://.godot/imported/Achievement_Candid_Cryptid.webp-dbefd4dc90d22e94fadbd050ece70ffa.ctex"]
 
 [params]
 

@@ -81,11 +81,13 @@
 [ext_resource type="Texture2D" uid="uid://ct0qnevfp5mho" path="res://assets/images/sprites/incognito/TacoMantisMysterySticker.png" id="82_jdg5l"]
 [ext_resource type="Texture2D" uid="uid://dduyiycjorj8v" path="res://assets/images/sprites/incognito/TacoMysterySticker.png" id="83_hotub"]
 [ext_resource type="Texture2D" uid="uid://xgew6xcfbdyy" path="res://assets/images/sprites/incognito/TropicalDrinkMysterySticker.png" id="84_8nd2u"]
+[ext_resource type="Texture2D" uid="uid://njl4q2amdbve" path="res://assets/images/sprites/razzby.png" id="85_2cxkw"]
 [ext_resource type="Texture2D" uid="uid://cfxe0l6a0lrnv" path="res://assets/images/sprites/incognito/WafflesMysterySticker.png" id="85_37bgm"]
 [ext_resource type="Texture2D" uid="uid://cdxtbgta6wcjg" path="res://assets/images/ui/CharacterDialogue.png" id="85_gtulj"]
 [ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="86_2cxkw"]
 [ext_resource type="Texture2D" uid="uid://j8ss7eq0vdap" path="res://assets/images/sprites/incognito/WatermelonBallMysterySticker.png" id="86_j3gfd"]
 [ext_resource type="Texture2D" uid="uid://dn02io0863wdy" path="res://assets/images/sprites/incognito/WatermelonMysterySticker.png" id="87_g58oo"]
+[ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="88_052ix"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y38c6"]
 animations = [{
@@ -366,6 +368,8 @@ sprite_frames = SubResource("SpriteFrames_y38c6")
 animation = &"random"
 
 [node name="Chosen" type="Sprite2D" parent="Bugsnax" unique_id=1444113369]
+scale = Vector2(0.33398438, 0.33398438)
+texture = ExtResource("85_2cxkw")
 
 [node name="Texto" type="Control" parent="." unique_id=1089702199]
 visible = false
@@ -378,10 +382,10 @@ grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="Texto" unique_id=1023992879]
 layout_mode = 0
-offset_left = 317.0
-offset_top = 479.0
-offset_right = 1000.0
-offset_bottom = 680.0
+offset_left = 307.0
+offset_top = 486.0
+offset_right = 990.0
+offset_bottom = 687.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("85_gtulj")
 expand_mode = 1
@@ -389,9 +393,9 @@ expand_mode = 1
 [node name="Label" type="Label" parent="Texto" unique_id=1958772771]
 layout_mode = 0
 offset_left = 495.0
-offset_top = 501.0
+offset_top = 508.0
 offset_right = 799.0
-offset_bottom = 650.0
+offset_bottom = 657.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("86_2cxkw")
@@ -401,3 +405,16 @@ Grapeskeeto"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Exit" type="TextureButton" parent="." unique_id=505563549]
+modulate = Color(0.9607843, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("88_052ix")
+
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
+[connection signal="button_up" from="Exit" to="." method="_on_exit_button_up"]
+[connection signal="mouse_entered" from="Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="." method="_on_exit_mouse_exited"]
