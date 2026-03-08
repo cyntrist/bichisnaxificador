@@ -30,9 +30,12 @@ var nombres_insectos := [
 	"Mosquito",
 	"Termita",
 	"Escolopendra",
-	"Ciempies",
-	"Milpies",
+	"Ciempiés",
+	"Milpiés",
 	"Mantis",
+	"Cangrejo",
+	"Gamba",
+	"Langostino",
 	"Cochinilla",
 	"Bicho Palo",
 	"Abeja",
@@ -41,6 +44,10 @@ var nombres_insectos := [
 	"Saltamontes",
 	"Pulga",
 	"Garrapata",
+	"Langosta",
+	"Kril",
+	"Percebe",
+	"Cangrejo herradura",
 	"Zapatero",
 	"Escorpión",
 	"Luciérnaga",
@@ -55,6 +62,7 @@ var nombres_insectos := [
 	"Hormiga",
 	"Escarabajo",
 	"Avispa",
+	"Abejorro",
 	"Araña"
 ]
 
@@ -96,6 +104,8 @@ var nombres_comidas := [
 	"Canónigo",
 	"Tomate",
 	"Cereales",
+	"Paella",
+	"Taco",
 	"Pasta",
 	"Fideos",
 	"Ensalada",
@@ -127,6 +137,7 @@ func on_enable() -> void:
 func mostrar_bicho():
 	bicho.visible = true
 	bicho.scale = big_scale
+	bicho_texto.text = nombres_insectos.pick_random()
 	bicho.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
 	if tween_bicho: tween_bicho.kill()
 	tween_bicho = create_tween()
@@ -147,6 +158,7 @@ func mostrar_cruz():
 func mostrar_comida():
 	comida.visible = true
 	comida.scale = big_scale
+	comida_texto.text = nombres_comidas.pick_random()
 	comida.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
 	if tween_comida: tween_comida.kill()
 	tween_comida = create_tween()
