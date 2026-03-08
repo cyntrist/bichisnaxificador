@@ -3,6 +3,7 @@ extends Scene
 @onready var exit_button : TextureButton = $Exit
 var tween_hover : Tween
 var tween_click : Tween
+var hovering_exit : bool = false
 var hover_scale = Vector2(1.1, 1.1)
 var default_scale = Vector2(1.0, 1.0)
 var tween_hover_duration = 0.2
@@ -17,7 +18,9 @@ func on_enable() -> void:
 func on_disable() -> void:
 	pass
 
+
 func _on_exit_mouse_entered() -> void:
+	hovering_exit = true
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
@@ -27,6 +30,7 @@ func _on_exit_mouse_entered() -> void:
 
 
 func _on_exit_mouse_exited() -> void:
+	hovering_exit = false
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
@@ -40,7 +44,11 @@ func _on_exit_button_down() -> void:
 		tween_click.kill()
 	if tween_hover:
 		tween_hover.kill()
-	exit_button.scale = Vector2(0.9, 0.9)
+#	exit_button.scale = Vector2(0.9, 0.9)
+	tween_click = create_tween()
+	tween_click.set_ease(Tween.EASE_OUT)
+	tween_click.set_trans(Tween.TRANS_EXPO)
+	tween_click.tween_property(exit_button, "scale", Vector2(0.9,0.9), 0.1)
 	pass # Replace with function body.
 
 
