@@ -14,6 +14,9 @@ var tween_logo_letras : Tween
 var tween_boton_aleatorio : Tween
 var tween_boton_nuevo : Tween
 
+var tween_logo_click1:Tween
+var tween_logo_click2:Tween
+
 func _init() -> void:
 	pass
 
@@ -59,3 +62,29 @@ func on_enable() -> void:
 func on_disable() -> void:
 	pass
 	
+
+func _on_boton_button_down() -> void:
+	if tween_logo_click1: 
+		tween_logo_click1.kill()
+	if tween_logo_click2: 
+		tween_logo_click2.kill()
+	$Logo/Fondo.scale = Vector2(0.9, 0.9)
+	$Logo/Logo.scale = Vector2(0.9, 0.9)
+	pass # Replace with function body.
+
+
+func _on_boton_button_up() -> void:
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
+	
+	# restores the scale smoothly in 0.25 seconds
+	tween_logo_click1.tween_property($Logo/Fondo, "scale", Vector2(1,1), 0.25)
+	
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
+	
+	# restores the scale smoothly in 0.25 seconds
+	tween_logo_click1.tween_property($Logo/Logo, "scale", Vector2(1,1), 0.25)
+	pass # Replace with function body.

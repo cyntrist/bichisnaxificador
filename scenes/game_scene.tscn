@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://cju4tmmfdmbij" path="res://assets/images/ui/boton_aleatorio.png" id="7_b5spy"]
 [ext_resource type="Texture2D" uid="uid://dp1wkr7j4ngh" path="res://assets/images/ui/boton_nuevo.png" id="8_utbpp"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5spy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utbpp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mw25s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcjrq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvs2r"]
+
 [node name="GameScene" type="Control" unique_id=1122993165]
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +54,7 @@ speed = 33.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="Fondo" type="TextureRect" parent="Logo" unique_id=1747312045]
 layout_mode = 0
@@ -66,6 +77,18 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("6_rurhu")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Boton" type="Button" parent="Logo" unique_id=944642802]
+layout_mode = 0
+offset_left = 109.67871
+offset_top = 89.0
+offset_right = 1163.0
+offset_bottom = 276.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5spy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_utbpp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mw25s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tcjrq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvs2r")
 
 [node name="Botones" type="Control" parent="." unique_id=601102942]
 anchors_preset = 0
@@ -93,3 +116,6 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("8_utbpp")
 ignore_texture_size = true
 stretch_mode = 4
+
+[connection signal="button_down" from="Logo/Boton" to="." method="_on_boton_button_down"]
+[connection signal="button_up" from="Logo/Boton" to="." method="_on_boton_button_up"]
