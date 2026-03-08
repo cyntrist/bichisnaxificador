@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dl5mco075nbxf"]
+
+[ext_resource type="Texture2D" uid="uid://cu24tmm4ef3d2" path="res://assets/images/ui/circle_cross.png" id="1_pfvu1"]
+[ext_resource type="Script" uid="uid://c08a1bux7opgl" path="res://scripts/dot.gd" id="2_x4unx"]
+
+[node name="Dots" type="Sprite2D" unique_id=2027057053]
+modulate = Color(0.16470589, 0.32941177, 0.5921569, 0.32941177)
+texture_repeat = 2
+texture = ExtResource("1_pfvu1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+script = ExtResource("2_x4unx")
+speed = 33.0

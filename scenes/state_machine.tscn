@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c161kl18xdbk1"]
 
 [ext_resource type="Script" uid="uid://bqnm45w65wo6p" path="res://scripts/state_machine.gd" id="1_nj0rb"]
-[ext_resource type="PackedScene" uid="uid://dot54uqxpvioo" path="res://objects/canvas/shader.tscn" id="2_6rk0d"]
 [ext_resource type="PackedScene" uid="uid://2fn8su01j5da" path="res://scenes/intro_scene.tscn" id="2_a0fpy"]
+[ext_resource type="Texture2D" uid="uid://bm0p27fn0u188" path="res://assets/images/ui/bg.png" id="4_a0fpy"]
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
-[ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
+[ext_resource type="PackedScene" uid="uid://dl5mco075nbxf" path="res://scenes/dots.tscn" id="5_s46hd"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
 
 [node name="State Machine" type="Node" unique_id=1764933967]
@@ -14,11 +14,27 @@ initial_scene = ExtResource("2_a0fpy")
 
 [node name="Scenes" type="Node" parent="." unique_id=138193595]
 
-[node name="Fade" parent="." unique_id=1845705408 instance=ExtResource("5_yux3b")]
-visible = false
+[node name="Control" type="Control" parent="Scenes" unique_id=1554572954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Shader" parent="." unique_id=383879478 instance=ExtResource("2_6rk0d")]
-visible = false
+[node name="Background" type="TextureRect" parent="Scenes/Control" unique_id=1322624859]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_a0fpy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Dots" parent="Scenes/Control" unique_id=2027057053 instance=ExtResource("5_s46hd")]
+position = Vector2(640, 360)
 
 [node name="Sound" type="Node" parent="." unique_id=1246444031]
 script = ExtResource("7_s46hd")

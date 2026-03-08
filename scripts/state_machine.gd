@@ -3,7 +3,6 @@ extends Node
 @export_category("Array de escenas en el orden de Global.Scenes")
 @export var scenes: Array[PackedScene] = [] 
 @export var initial_scene : PackedScene
-@onready var fade = $Fade
 
 var currentScene : Scene
 @onready var sound = $Sound
