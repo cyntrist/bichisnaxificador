@@ -21,7 +21,7 @@ func _ready() -> void:
 	Global.current_scene = Global.next_scene
 	pass 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _input(event):
