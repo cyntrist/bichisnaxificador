@@ -5,8 +5,6 @@ const FULL_TEXT := "[rainbow freq=0.18 sat=0.5 val=1 speed=0.05][wave amp=50 fre
 @export var duration := 1.5
 
 func _ready():
-	bbcode_enabled = true
-	text = FULL_TEXT
 	visible_characters = 0
 
 func reveal_text():

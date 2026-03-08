@@ -85,8 +85,8 @@
 [ext_resource type="Texture2D" uid="uid://cfxe0l6a0lrnv" path="res://assets/images/sprites/incognito/WafflesMysterySticker.png" id="85_37bgm"]
 [ext_resource type="Texture2D" uid="uid://cdxtbgta6wcjg" path="res://assets/images/ui/CharacterDialogue.png" id="85_gtulj"]
 [ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="86_2cxkw"]
+[ext_resource type="PackedScene" uid="uid://b541gsu1w4v40" path="res://scenes/dibujar.tscn" id="86_dbagd"]
 [ext_resource type="Texture2D" uid="uid://j8ss7eq0vdap" path="res://assets/images/sprites/incognito/WatermelonBallMysterySticker.png" id="86_j3gfd"]
-[ext_resource type="Script" uid="uid://cjkbfin3xidil" path="res://scripts/animated_text.gd" id="87_dbagd"]
 [ext_resource type="Texture2D" uid="uid://dn02io0863wdy" path="res://assets/images/sprites/incognito/WatermelonMysterySticker.png" id="87_g58oo"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="88_052ix"]
 [ext_resource type="Texture2D" uid="uid://li51g71nk8yw" path="res://assets/images/ui/MysterySticker.png" id="89_jf6gs"]
@@ -463,25 +463,12 @@ animation = &"random"
 scale = Vector2(0.33398438, 0.33398438)
 texture = ExtResource("85_2cxkw")
 
-[node name="Dibujar" type="RichTextLabel" parent="." unique_id=1614261325]
+[node name="Dibujar" parent="." unique_id=1170737272 instance=ExtResource("86_dbagd")]
 layout_mode = 0
-offset_left = 273.0
-offset_top = 68.0
-offset_right = 1008.0
-offset_bottom = 223.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49019608)
-theme_override_constants/shadow_outline_size = 0
-theme_override_constants/shadow_offset_x = 12
-theme_override_constants/shadow_offset_y = 12
-theme_override_fonts/normal_font = ExtResource("86_2cxkw")
-theme_override_font_sizes/normal_font_size = 121
-bbcode_enabled = true
-text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡A dibujar![/wave][/rainbow]"
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("87_dbagd")
+offset_left = 270.0
+offset_top = 60.0
+offset_right = 1005.0
+offset_bottom = 215.0
 
 [node name="Texto" type="Control" parent="." unique_id=1089702199]
 visible = false

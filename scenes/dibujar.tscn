@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b541gsu1w4v40"]
+
+[ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="1_klxxk"]
+[ext_resource type="Script" uid="uid://cjkbfin3xidil" path="res://scripts/animated_text.gd" id="2_ixa02"]
+
+[node name="Dibujar" type="RichTextLabel" unique_id=1170737272]
+offset_right = 735.0
+offset_bottom = 155.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49019608)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_fonts/normal_font = ExtResource("1_klxxk")
+theme_override_font_sizes/normal_font_size = 121
+bbcode_enabled = true
+text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡A dibujar![/wave][/rainbow]"
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ixa02")
