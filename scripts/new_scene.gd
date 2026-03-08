@@ -173,4 +173,5 @@ func _on_retry_button_down() -> void:
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(retry_button_shape, "rotation", TAU, 1.0).as_relative()
+	mostrar_bicho()
 	pass # Replace with function body.
