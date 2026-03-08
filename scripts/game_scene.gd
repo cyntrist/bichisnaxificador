@@ -12,6 +12,7 @@ extends Scene
 
 var tween_logo_bg : Tween
 var tween_logo_letras : Tween
+var tween_logo_letras_escala : Tween
 var tween_boton_aleatorio : Tween
 var tween_boton_nuevo : Tween
 
@@ -42,6 +43,19 @@ func on_enable() -> void:
 	tween_logo_letras.set_ease(tween_ease)
 	tween_logo_letras.set_trans(tween_trans)
 	tween_logo_letras.tween_property(logo_letras, "position:y", 140, tween_speed)
+	
+#	logo_letras.scale = Vector2(0.8,1.2)
+	if tween_logo_letras_escala:
+		tween_logo_letras_escala.kill()
+	tween_logo_letras_escala = create_tween()
+	tween_logo_letras_escala.set_ease(Tween.EASE_OUT)
+	tween_logo_letras_escala.set_trans(Tween.TRANS_SPRING)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 0.5)
+	tween_logo_letras_escala.set_trans(Tween.TRANS_SINE)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.1,0.9), 0.3)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.,1), 0.1)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.95,1.05), 0.1)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.,1), 0.1)
 	
 	await Global.timer(0.2)
 	if tween_logo_bg: 
