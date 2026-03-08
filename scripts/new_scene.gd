@@ -5,10 +5,14 @@ extends Scene
 @onready var retry : Control = $Retry
 @onready var retry_button_shape : TextureRect = $Retry/Shape
 @onready var dibujar : RichTextLabel = $Dibujar
-@onready var animator : AnimationPlayer = $AnimationPlayer
-@onready var bicho :  = $AnimationPlayer
-@onready var comida :  = $AnimationPlayer
-
+@onready var bicho : CenterContainer = $Bicho
+@onready var bicho_texto : Label = $Bicho/Margenes/Texto
+@onready var comida : CenterContainer = $Comida
+@onready var comida_texto : Label = $Comida/Margenes/Texto
+var pegado_scale = Vector2(0.75,0.75)
+var big_scale = Vector2(0.9,0.9)
+@export var min_rotation : float = -5.0
+@export var max_rotation : float = 5.0
 var tween_hover : Tween
 var tween_click : Tween
 var hovering_exit : bool = false
@@ -18,7 +22,14 @@ var default_scale = Vector2(0.7, 0.7)
 var default_scale2 = Vector2(1.0, 1.0)
 var tween_hover_duration = 0.2
 
+func _ready() -> void:
+	retry.visible = false
+	dibujar.visible = false
+	comida.visible = false
+	bicho.visible = false
+
 func on_enable() -> void:
+	dibujar.visible = true
 	var tween2 = create_tween()
 	tween2.set_trans(Tween.TRANS_SINE)
 	tween2.set_ease(Tween.EASE_IN_OUT)
@@ -29,11 +40,53 @@ func on_enable() -> void:
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(dibujar, "scale", Vector2(0.9,0.9), 1.5)
+	tween.finished.connect(mostrar_bicho)
 	pass
 	
-func on_disable() -> void:
+func mostrar_bicho():
+	bicho.visible = true
+	bicho.scale = big_scale
+	bicho.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(bicho, "scale", pegado_scale, 0.5)
+	tween.finished.connect(mostrar_comida)
+	pass
+	
+func mostrar_cruz():
+#	var tween = create_tween()
+#	tween.set_trans(Tween.TRANS_BACK)
+#	tween.set_ease(Tween.EASE_OUT)
+#	tween.tween_property(dibujar, "scale", Vector2(0.9,0.9), 1.5)
+#	tween.finished.connect(mostrar_comida)
+	pass
+	
+func mostrar_comida():
+	comida.visible = true
+	comida.scale = big_scale
+	comida.rotation_degrees = Global.random.randf_range(min_rotation,max_rotation)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(comida, "scale", pegado_scale, 0.5)
+	tween.finished.connect(mostrar_boton)
 	pass
 
+func mostrar_boton():
+	if retry.visible: return
+	retry.visible = true
+	retry.scale = Vector2(0.9,1.1)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(retry, "scale", Vector2(1.1,0.9), 0.5)
+	tween.tween_property(retry, "scale", Vector2(1.0,1.0), 0.5)
+	pass
+	
+	
+	
+	
 
 func _on_exit_mouse_entered() -> void:
 	hovering_exit = true

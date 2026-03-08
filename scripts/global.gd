@@ -37,6 +37,7 @@ var startCoolDown = false
 var random = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	randomize()
 	load_bugsnaxes_async(sprites_folder)
 	pass
 

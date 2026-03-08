@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://cfhxduk7al4q7" path="res://scripts/new_scene.gd" id="1_iw84y"]
 [ext_resource type="Texture2D" uid="uid://drgc0g4e37o0j" path="res://assets/images/ui/retry_button_retryless.png" id="2_26ve2"]
 [ext_resource type="PackedScene" uid="uid://b541gsu1w4v40" path="res://scenes/dibujar.tscn" id="2_gysvl"]
+[ext_resource type="Texture2D" uid="uid://bu2fauut8c3ke" path="res://assets/images/ui/Swatch.png" id="2_h2hj6"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="2_qvyla"]
 [ext_resource type="Texture2D" uid="uid://dbvfsvogfl8j1" path="res://assets/images/ui/retry_button_only.png" id="3_q6t1g"]
+[ext_resource type="FontFile" uid="uid://dbuf74j5l35v6" path="res://assets/fonts/BubbleboddyNeue-Bold Trial.ttf" id="3_ra1e3"]
+[ext_resource type="Texture2D" uid="uid://bmhyuvnq3jbpw" path="res://assets/images/ui/trapExplosion.png" id="4_urooo"]
 
 [node name="NewScene" type="Control" unique_id=521462308]
 layout_mode = 3
@@ -15,47 +18,77 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iw84y")
 
-[node name="Bicho" type="Control" parent="." unique_id=404003929]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Fondo" type="TextureRect" parent="Bicho" unique_id=1211679216]
+[node name="Bicho" type="CenterContainer" parent="." unique_id=1971951069]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 13.5
+offset_top = 78.0
+offset_right = 1273.5
+offset_bottom = 550.0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="Texto" type="Label" parent="Bicho" unique_id=1515923438]
+[node name="Fondo" type="TextureRect" parent="Bicho" unique_id=140517506]
+layout_mode = 2
+texture = ExtResource("2_h2hj6")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Margenes" type="MarginContainer" parent="Bicho" unique_id=1727496705]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Texto" type="Label" parent="Bicho/Margenes" unique_id=1515923438]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ra1e3")
+theme_override_font_sizes/font_size = 111
+text = "Escolopendra"
+
+[node name="Comida" type="CenterContainer" parent="." unique_id=967826054]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 36.5
+offset_top = 300.0
+offset_right = 1256.4918
+offset_bottom = 610.9739
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="Comida" type="Control" parent="." unique_id=1676289353]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Fondo" type="TextureRect" parent="Comida" unique_id=1502302869]
+layout_mode = 2
+texture = ExtResource("2_h2hj6")
+expand_mode = 1
+stretch_mode = 3
 
-[node name="Fondo" type="TextureRect" parent="Comida" unique_id=80687912]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Margenes" type="MarginContainer" parent="Comida" unique_id=622797138]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
 
-[node name="Texto" type="Label" parent="Comida" unique_id=891443673]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Texto" type="Label" parent="Comida/Margenes" unique_id=1346076882]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ra1e3")
+theme_override_font_sizes/font_size = 111
+text = "Mantequilla"
 
 [node name="Cross" type="TextureRect" parent="." unique_id=1720117065]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 535.0
+offset_top = 238.0
+offset_right = 755.0
+offset_bottom = 458.0
+texture = ExtResource("4_urooo")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Retry" type="Control" parent="." unique_id=1918409153]
 anchors_preset = 0
 offset_left = 553.0
-offset_top = 478.0
+offset_top = 519.0
 offset_right = 553.0
-offset_bottom = 478.0
+offset_bottom = 519.0
 pivot_offset = Vector2(87, 84)
 
 [node name="Button" type="TextureButton" parent="Retry" unique_id=1670952246]
@@ -94,10 +127,8 @@ offset_left = 85.0
 offset_top = 65.0
 offset_right = 1188.0
 offset_bottom = 220.0
-scale = Vector2(1e-05, 1e-05)
+scale = Vector2(0.9, 0.9)
 text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡Crea un bichisnax![/wave][/rainbow]"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=298282633]
 
 [connection signal="button_down" from="Retry/Button" to="." method="_on_retry_button_down"]
 [connection signal="button_up" from="Retry/Button" to="." method="_on_repeat_button_up"]

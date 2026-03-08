@@ -8,6 +8,7 @@ extends Scene
 @export var tween_speed : float = 1.0
 @export var tween_trans : Tween.TransitionType = Tween.TRANS_SPRING
 @export var tween_ease : Tween.EaseType = Tween.EASE_OUT
+@export var tween_trans_disable : Tween.TransitionType = Tween.TRANS_BACK
 @export var tween_ease_disable : Tween.EaseType = Tween.EASE_IN
 
 var tween_logo_bg : Tween
@@ -221,7 +222,7 @@ func hide_aleatorio():
 		tween_boton_aleatorio.kill()
 	tween_boton_aleatorio = create_tween()
 	tween_boton_aleatorio.set_ease(tween_ease_disable)
-	tween_boton_aleatorio.set_trans(tween_trans)
+	tween_boton_aleatorio.set_trans(tween_trans_disable)
 	tween_boton_aleatorio.tween_property(boton_aleatorio, "position:y", 728, tween_speed)
 	
 func hide_nuevo():
@@ -229,7 +230,7 @@ func hide_nuevo():
 		tween_boton_nuevo.kill()
 	tween_boton_nuevo = create_tween()
 	tween_boton_nuevo.set_ease(tween_ease_disable)
-	tween_boton_nuevo.set_trans(tween_trans)
+	tween_boton_nuevo.set_trans(tween_trans_disable)
 	tween_boton_nuevo.tween_property(boton_nuevo, "position:y", 728, tween_speed)
 	
 func hide_logo(scene : Global.Scenes):
@@ -237,17 +238,26 @@ func hide_logo(scene : Global.Scenes):
 		tween_logo_bg.kill()
 	tween_logo_bg = create_tween()
 	tween_logo_bg.set_ease(tween_ease_disable)
-	tween_logo_bg.set_trans(tween_trans)
+	tween_logo_bg.set_trans(tween_trans_disable)
 	tween_logo_bg.tween_property(logo_fondo, "position:y", -185, tween_speed)
+
+	if tween_logo_letras_escala:
+		tween_logo_letras_escala.kill()
+	tween_logo_letras_escala = create_tween()
+	tween_logo_letras_escala.set_ease(Tween.EASE_IN)
+	tween_logo_letras_escala.set_trans(Tween.TRANS_BACK)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 1.)
 
 	await Global.timer(0.2)
 	if tween_logo_letras:
 		tween_logo_letras.kill()
 	tween_logo_letras = create_tween()
 	tween_logo_letras.set_ease(tween_ease_disable)
-	tween_logo_letras.set_trans(tween_trans)
+	tween_logo_letras.set_trans(tween_trans_disable)
 	tween_logo_letras.tween_property(logo_letras, "position:y", -90, tween_speed)
 	tween_logo_letras.finished.connect(func() -> void:
 		Global.change_scene(scene)
 	)
+	
+
 	pass
