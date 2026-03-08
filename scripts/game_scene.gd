@@ -4,8 +4,6 @@ extends Scene
 @onready var logo_fondo = $Logo/Fondo
 @onready var boton_nuevo = $Botones/Nuevo
 @onready var boton_aleatorio = $Botones/Aleatorio
-@onready var animator : AnimationPlayer = $AnimationPlayer
-@onready var animator2 : AnimationPlayer = $AnimationPlayer2
 
 @export var tween_speed : float = 1.0
 @export var tween_trans : Tween.TransitionType = Tween.TRANS_SPRING
@@ -44,7 +42,6 @@ func on_enable() -> void:
 	tween_logo_letras.set_ease(tween_ease)
 	tween_logo_letras.set_trans(tween_trans)
 	tween_logo_letras.tween_property(logo_letras, "position:y", 140, tween_speed)
-	animator.play("rotate_letras")
 	
 	await Global.timer(0.2)
 	if tween_logo_bg: 
@@ -53,7 +50,6 @@ func on_enable() -> void:
 	tween_logo_bg.set_ease(tween_ease)
 	tween_logo_bg.set_trans(tween_trans)
 	tween_logo_bg.tween_property(logo_fondo, "position:y", 100, tween_speed)
-	animator2.play("rotate_fondo")
 	
 	await Global.timer(0.2)
 	if tween_boton_aleatorio: 
