@@ -41,11 +41,7 @@ func _on_fade_begin(speed = 1.0) -> void:
 		lastScene.on_disable()
 		var tween : Tween = create_tween()
 		tween.tween_property(lastScene, "modulate:a", 0, speed)
-		tween.finished.connect(func(): 
-			lastScene.queue_free()
-			currentScene.on_enable()
-			Global.current_scene = Global.next_scene
-		)
+		tween.finished.connect(_on_fade_end.bind(lastScene))
 		currentScene = scenes[Global.next_scene].instantiate()
 		currentScene.z_index = 0
 		lastScene.z_index = 1
@@ -59,14 +55,19 @@ func _on_fade_begin(speed = 1.0) -> void:
 		currentScene.on_enable()
 		Global.current_scene = Global.next_scene
 
-func _on_fade_end() -> void: #justo antes del fadeout
-	# escena a apagar
-	if currentScene:
-		currentScene.on_disable()
-		currentScene.queue_free()
-	# escena a encender
-	currentScene = scenes[Global.next_scene].instantiate()
-	$Scenes.add_child(currentScene)
+func _on_fade_end(lastScene) -> void: 
+	lastScene.queue_free()
 	currentScene.on_enable()
-	
 	Global.current_scene = Global.next_scene
+	Global.transitioning = false
+
+#	# escena a apagar
+#	if currentScene:
+#		currentScene.on_disable()
+#		currentScene.queue_free()
+#	# escena a encender
+#	currentScene = scenes[Global.next_scene].instantiate()
+#	$Scenes.add_child(currentScene)
+#	currentScene.on_enable()
+#
+#	Global.current_scene = Global.next_scene

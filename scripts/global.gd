@@ -25,6 +25,7 @@ var current_scene = Scenes.NULL
 var next_scene = Scenes.INTRO
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
 enum Scenes { INTRO, MENU, RANDOM, NEW, NULL}
+var transitioning : bool = false
 
 ## sonido
 var sfx
@@ -47,8 +48,8 @@ func  _process(delta: float) -> void:
 
 func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 	Global.next_scene = next
-	if ((current_scene != next || force) and not startCoolDown):
-		#startCoolDown = true
+	if ((current_scene != next || force) and not transitioning):
+		transitioning = true
 		Global.on_transition_begin.emit(speed)
 
 func timer(tiempo = 1.0) -> Signal:
