@@ -141,7 +141,11 @@ func _on_aleatorio_button_down() -> void:
 		tween_logo_click1.kill()
 	if tween_hover:
 		tween_hover.kill()
-	boton_aleatorio.scale = Vector2(0.9, 0.9)
+#	boton_aleatorio.scale = Vector2(0.9, 0.9)
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
+	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(0.9,0.9), 0.1)
 	pass # Replace with function body.
 
 
@@ -159,7 +163,11 @@ func _on_nuevo_button_down() -> void:
 		tween_logo_click1.kill()
 	if tween_hover:
 		tween_hover.kill()
-	boton_nuevo.scale = Vector2(0.9, 0.9)
+#	boton_nuevo.scale = Vector2(0.9, 0.9)
+	tween_logo_click1 = create_tween()
+	tween_logo_click1.set_ease(Tween.EASE_OUT)
+	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
+	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(0.9,0.9), 0.1)
 	pass # Replace with function body.
 
 

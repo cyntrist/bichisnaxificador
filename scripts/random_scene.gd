@@ -95,7 +95,8 @@ func _on_exit_mouse_entered() -> void:
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
-	tween_hover.tween_property(exit_button, "scale", hover_scale, tween_hover_duration)
+	tween_hover.parallel().tween_property(exit_button, "scale", hover_scale, tween_hover_duration)
+	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,1), tween_hover_duration)
 	pass # Replace with function body.
 
 
@@ -103,7 +104,8 @@ func _on_exit_mouse_exited() -> void:
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
-	tween_hover.tween_property(exit_button, "scale", default_scale, tween_hover_duration)
+	tween_hover.parallel().tween_property(exit_button, "scale", default_scale, tween_hover_duration)
+	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,0.5), tween_hover_duration)
 	pass # Replace with function body.
 
 
@@ -112,7 +114,11 @@ func _on_exit_button_down() -> void:
 		tween_click.kill()
 	if tween_hover:
 		tween_hover.kill()
-	exit_button.scale = Vector2(0.9, 0.9)
+#	exit_button.scale = Vector2(0.9, 0.9)
+	tween_click = create_tween()
+	tween_click.set_ease(Tween.EASE_OUT)
+	tween_click.set_trans(Tween.TRANS_EXPO)
+	tween_click.tween_property(exit_button, "scale", Vector2(0.9,0.9), 0.1)
 	pass # Replace with function body.
 
 
