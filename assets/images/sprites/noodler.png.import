@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnvwkitm0ktfi"
-path="res://.godot/imported/noodler.png-1e143e5b2013d1426f1a32972a43ef30.ctex"
+uid="uid://c1qwv8qhw2sc8"
+path="res://.godot/imported/Noodler.png-ba687e035fd937f6e215c48568223ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/noodler.png"
-dest_files=["res://.godot/imported/noodler.png-1e143e5b2013d1426f1a32972a43ef30.ctex"]
+source_file="res://assets/images/sprites/Noodler.png"
+dest_files=["res://.godot/imported/Noodler.png-ba687e035fd937f6e215c48568223ba2.ctex"]
 
 [params]
 

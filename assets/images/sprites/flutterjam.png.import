@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxjron8fjr0mr"
-path="res://.godot/imported/flutterjam.png-69a59fca326e1297a3692e62c9c41a4b.ctex"
+uid="uid://dpm4tec47irui"
+path="res://.godot/imported/Flutterjam.png-66a25949e34ede88e06bd06b3345fc39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/flutterjam.png"
-dest_files=["res://.godot/imported/flutterjam.png-69a59fca326e1297a3692e62c9c41a4b.ctex"]
+source_file="res://assets/images/sprites/Flutterjam.png"
+dest_files=["res://.godot/imported/Flutterjam.png-66a25949e34ede88e06bd06b3345fc39.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqcgn817c1iai"
-path="res://.godot/imported/spaghider.png-4875e7349f7b55206afbeca7c74e1c32.ctex"
+uid="uid://c17gugtxieduc"
+path="res://.godot/imported/Spaghider.png-c4957501c5809e0cd185a295545ad47d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/spaghider.png"
-dest_files=["res://.godot/imported/spaghider.png-4875e7349f7b55206afbeca7c74e1c32.ctex"]
+source_file="res://assets/images/sprites/Spaghider.png"
+dest_files=["res://.godot/imported/Spaghider.png-c4957501c5809e0cd185a295545ad47d.ctex"]
 
 [params]
 

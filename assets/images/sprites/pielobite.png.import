@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0odtvr48dmlm"
-path="res://.godot/imported/pielobite.png-38f8bb63b2b29b55ed2d9f7a200ce9c5.ctex"
+uid="uid://cs7vorreoa0au"
+path="res://.godot/imported/Pielobite.png-1ae8dad713cb9fb0364656d4ba405f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/pielobite.png"
-dest_files=["res://.godot/imported/pielobite.png-38f8bb63b2b29b55ed2d9f7a200ce9c5.ctex"]
+source_file="res://assets/images/sprites/Pielobite.png"
+dest_files=["res://.godot/imported/Pielobite.png-1ae8dad713cb9fb0364656d4ba405f17.ctex"]
 
 [params]
 

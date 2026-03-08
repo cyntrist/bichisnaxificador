@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt7d6oi0i5rmw"
-path="res://.godot/imported/cinnasnail.png-517f22226e0be1033f564c28da15bd88.ctex"
+uid="uid://bmj3iq5vrd646"
+path="res://.godot/imported/Cinnasnail.png-db95e32a77cb96d7ecbd2633c8a04970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/cinnasnail.png"
-dest_files=["res://.godot/imported/cinnasnail.png-517f22226e0be1033f564c28da15bd88.ctex"]
+source_file="res://assets/images/sprites/Cinnasnail.png"
+dest_files=["res://.godot/imported/Cinnasnail.png-db95e32a77cb96d7ecbd2633c8a04970.ctex"]
 
 [params]
 

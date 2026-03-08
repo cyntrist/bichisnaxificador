@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0aa4efimovhh"
-path="res://.godot/imported/sweetiefly.png-9f1fbf20af1a2adc586ee89873284f6d.ctex"
+uid="uid://bsvngjyxgxpjg"
+path="res://.godot/imported/Sweetiefly.png-82046e122c9f79e61e466d98bdc9d343.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/sweetiefly.png"
-dest_files=["res://.godot/imported/sweetiefly.png-9f1fbf20af1a2adc586ee89873284f6d.ctex"]
+source_file="res://assets/images/sprites/Sweetiefly.png"
+dest_files=["res://.godot/imported/Sweetiefly.png-82046e122c9f79e61e466d98bdc9d343.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhcwqhijnuke5"
-path="res://.godot/imported/cheddorb.png-0f2b4b24206aea4b8c5330305f2bac3b.ctex"
+uid="uid://d4i4wl66ojhru"
+path="res://.godot/imported/Cheddorb.png-4dd723c9af2a5747d3b6ad6edfdd7059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/cheddorb.png"
-dest_files=["res://.godot/imported/cheddorb.png-0f2b4b24206aea4b8c5330305f2bac3b.ctex"]
+source_file="res://assets/images/sprites/Cheddorb.png"
+dest_files=["res://.godot/imported/Cheddorb.png-4dd723c9af2a5747d3b6ad6edfdd7059.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5466xhap4c1v"
-path="res://.godot/imported/minimaki.png-f10097b58651b77f4546f1e4a7bd90a4.ctex"
+uid="uid://bgtd3cuamfefq"
+path="res://.godot/imported/Minimaki.png-1a4467cc4d19a109f261808ad861c7fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/minimaki.png"
-dest_files=["res://.godot/imported/minimaki.png-f10097b58651b77f4546f1e4a7bd90a4.ctex"]
+source_file="res://assets/images/sprites/Minimaki.png"
+dest_files=["res://.godot/imported/Minimaki.png-1a4467cc4d19a109f261808ad861c7fa.ctex"]
 
 [params]
 

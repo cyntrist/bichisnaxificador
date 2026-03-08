@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx8n4s7ksnu40"
-path="res://.godot/imported/snaxquatch.png-e0dfb46cb5e66bf4304f058bfdd91950.ctex"
+uid="uid://cpv1eywuwumd4"
+path="res://.godot/imported/Snaxquatch.png-3c6c43343a23ee5740b6f51aec7d4caf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/snaxquatch.png"
-dest_files=["res://.godot/imported/snaxquatch.png-e0dfb46cb5e66bf4304f058bfdd91950.ctex"]
+source_file="res://assets/images/sprites/Snaxquatch.png"
+dest_files=["res://.godot/imported/Snaxquatch.png-3c6c43343a23ee5740b6f51aec7d4caf.ctex"]
 
 [params]
 

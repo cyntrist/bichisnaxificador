@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3lxpuf2j75o2"
-path="res://.godot/imported/pineantula.png-b1dde018f4350279069cb24c2f963fea.ctex"
+uid="uid://cg6o8y4hn8bgf"
+path="res://.godot/imported/Pineantula.png-bf4caac67f6899e9c661cb34a758fd44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/pineantula.png"
-dest_files=["res://.godot/imported/pineantula.png-b1dde018f4350279069cb24c2f963fea.ctex"]
+source_file="res://assets/images/sprites/Pineantula.png"
+dest_files=["res://.godot/imported/Pineantula.png-bf4caac67f6899e9c661cb34a758fd44.ctex"]
 
 [params]
 

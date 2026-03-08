@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwlg0bqckdkba"
-path="res://.godot/imported/instabug.png-d38bbcde2e677d53744aa1bacb62091c.ctex"
+uid="uid://bxxbikuw7trw3"
+path="res://.godot/imported/Instabug.png-6c9a260cde70e1fb4adedcfabf338283.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/instabug.png"
-dest_files=["res://.godot/imported/instabug.png-d38bbcde2e677d53744aa1bacb62091c.ctex"]
+source_file="res://assets/images/sprites/Instabug.png"
+dest_files=["res://.godot/imported/Instabug.png-6c9a260cde70e1fb4adedcfabf338283.ctex"]
 
 [params]
 

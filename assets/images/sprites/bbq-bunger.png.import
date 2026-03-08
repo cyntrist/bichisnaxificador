@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5v3c7rr51sj"
-path="res://.godot/imported/bbq-bunger.png-6f27aa1bfeb4cb4735fc4bb984439539.ctex"
+uid="uid://bej3fd4401742"
+path="res://.godot/imported/BBQ-bunger.png-06390c8ef43d4f0296f6e9b1bd423954.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/bbq-bunger.png"
-dest_files=["res://.godot/imported/bbq-bunger.png-6f27aa1bfeb4cb4735fc4bb984439539.ctex"]
+source_file="res://assets/images/sprites/BBQ-bunger.png"
+dest_files=["res://.godot/imported/BBQ-bunger.png-06390c8ef43d4f0296f6e9b1bd423954.ctex"]
 
 [params]
 

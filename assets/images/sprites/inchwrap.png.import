@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7mqiysfhskb8"
-path="res://.godot/imported/inchwrap.png-7b40d295407057c46f6e5fc395f50e90.ctex"
+uid="uid://d2bnsieeqevbf"
+path="res://.godot/imported/Inchwrap.png-f0a58999ed13085f7981000b0e927e02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/inchwrap.png"
-dest_files=["res://.godot/imported/inchwrap.png-7b40d295407057c46f6e5fc395f50e90.ctex"]
+source_file="res://assets/images/sprites/Inchwrap.png"
+dest_files=["res://.godot/imported/Inchwrap.png-f0a58999ed13085f7981000b0e927e02.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn114tb23jqy0"
-path="res://.godot/imported/waffstackarak.png-5f8194eb9b2e7d59ff76a5518846a25e.ctex"
+uid="uid://bfidiia7olkva"
+path="res://.godot/imported/Waffstackarak.png-dfa526065760e1cc767649ecc3a5ca3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/waffstackarak.png"
-dest_files=["res://.godot/imported/waffstackarak.png-5f8194eb9b2e7d59ff76a5518846a25e.ctex"]
+source_file="res://assets/images/sprites/Waffstackarak.png"
+dest_files=["res://.godot/imported/Waffstackarak.png-dfa526065760e1cc767649ecc3a5ca3f.ctex"]
 
 [params]
 

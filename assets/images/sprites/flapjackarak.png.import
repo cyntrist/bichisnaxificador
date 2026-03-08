@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgisyu0w41nj"
-path="res://.godot/imported/flapjackarak.png-d3cbb239f2715e6f793562b849a3dde2.ctex"
+uid="uid://r8pnngbj1v24"
+path="res://.godot/imported/Flapjackarak.png-2f8a13d4f2e1a3b3d3ae78c90d21fd1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/flapjackarak.png"
-dest_files=["res://.godot/imported/flapjackarak.png-d3cbb239f2715e6f793562b849a3dde2.ctex"]
+source_file="res://assets/images/sprites/Flapjackarak.png"
+dest_files=["res://.godot/imported/Flapjackarak.png-2f8a13d4f2e1a3b3d3ae78c90d21fd1d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhawtcr4qxta2"
-path="res://.godot/imported/scorpenyo.png-13e3ac6e444f71af24733ee09cfd9a60.ctex"
+uid="uid://b2xd7n3dapqqe"
+path="res://.godot/imported/Scorpenyo.png-025a089599bc1d5592a8c9c41b685933.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/scorpenyo.png"
-dest_files=["res://.godot/imported/scorpenyo.png-13e3ac6e444f71af24733ee09cfd9a60.ctex"]
+source_file="res://assets/images/sprites/Scorpenyo.png"
+dest_files=["res://.godot/imported/Scorpenyo.png-025a089599bc1d5592a8c9c41b685933.ctex"]
 
 [params]
 

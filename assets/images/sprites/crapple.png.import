@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjck7v5yl0s4e"
-path="res://.godot/imported/crapple.png-43ba4cae7b6329d3c751cdb9c34a23bc.ctex"
+uid="uid://bps75qrm1q44h"
+path="res://.godot/imported/Crapple.png-b455d2028e26c15fda8c1cfe6344d34b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/crapple.png"
-dest_files=["res://.godot/imported/crapple.png-43ba4cae7b6329d3c751cdb9c34a23bc.ctex"]
+source_file="res://assets/images/sprites/Crapple.png"
+dest_files=["res://.godot/imported/Crapple.png-b455d2028e26c15fda8c1cfe6344d34b.ctex"]
 
 [params]
 

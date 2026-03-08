@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cksutrwk8mqm3"
-path="res://.godot/imported/megamaki.png-d92814776fae319820d870598ca5af32.ctex"
+uid="uid://cntwjny8gvkod"
+path="res://.godot/imported/Megamaki.png-42871e19946fd934440e78cb76ac7349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/megamaki.png"
-dest_files=["res://.godot/imported/megamaki.png-d92814776fae319820d870598ca5af32.ctex"]
+source_file="res://assets/images/sprites/Megamaki.png"
+dest_files=["res://.godot/imported/Megamaki.png-42871e19946fd934440e78cb76ac7349.ctex"]
 
 [params]
 

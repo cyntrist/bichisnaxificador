@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7eb75xxlm6yx"
-path="res://.godot/imported/stewdler.png-a524ff245e1beca46a4b142af882e2c1.ctex"
+uid="uid://u0ione16b87g"
+path="res://.godot/imported/Stewdler.png-bc2ae23c3dcc91fdd14956c3804b3ea2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/stewdler.png"
-dest_files=["res://.godot/imported/stewdler.png-a524ff245e1beca46a4b142af882e2c1.ctex"]
+source_file="res://assets/images/sprites/Stewdler.png"
+dest_files=["res://.godot/imported/Stewdler.png-bc2ae23c3dcc91fdd14956c3804b3ea2.ctex"]
 
 [params]
 
