@@ -82,15 +82,12 @@ func _on_boton_button_up() -> void:
 	tween_logo_click1 = create_tween()
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
-	
-	# restores the scale smoothly in 0.25 seconds
 	tween_logo_click1.tween_property($Logo/Fondo, "scale", Vector2(1,1), 0.25)
 	
+	await Global.timer(0.1)
 	tween_logo_click2 = create_tween()
 	tween_logo_click2.set_ease(Tween.EASE_OUT)
 	tween_logo_click2.set_trans(Tween.TRANS_SPRING)
-	
-	# restores the scale smoothly in 0.25 seconds
 	tween_logo_click2.tween_property($Logo/Logo, "scale", Vector2(1,1), 0.25)
 	pass # Replace with function body.
 
