@@ -13,6 +13,10 @@ signal on_disable(scene)
 @warning_ignore("unused_signal")
 signal on_game_end()
 
+var sprites_folder: String = "res://assets/images/sprites"
+var bugsnaxs: Dictionary = {}
+var loader_thread: Thread
+
 ## maquina de estados y variables de flujo
 var sm # state machine
 var current_scene = Scenes.NULL 
@@ -30,30 +34,43 @@ var startCoolDown = false
 var random = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	load_bugsnaxes_async(sprites_folder)
 	pass
 
 func  _process(delta: float) -> void:
-	if startCoolDown:
-		if coolDown <= 0:
-			startCoolDown = false
-			coolDown = 0.5
-		else:
-			coolDown-= delta
+	if loader_thread and not loader_thread.is_alive():
+		bugsnaxs = loader_thread.wait_to_finish()
+		loader_thread = null
 	pass
 
 func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 	Global.next_scene = next
-	#print(">> Changing from ", Global.current_scene, " to ", Global.next_scene)
 	if ((current_scene != next || force) and not startCoolDown):
 		#startCoolDown = true
 		Global.on_transition_begin.emit(speed)
 
 func timer(tiempo = 1.0) -> Signal:
 	return get_tree().create_timer(tiempo).timeout
+	
+	
+func load_bugsnaxes_async(path: String):
+	loader_thread = Thread.new()
+	loader_thread.start(_thread_load_bugsnaxes.bind(path))
+	
+func _thread_load_bugsnaxes(path: String):
+	var result := {}
+	_load_bugsnaxes(path, result)
+	return result	
+	
+func _load_bugsnaxes(path: String, target_dict: Dictionary) -> void:
+	var files: PackedStringArray = ResourceLoader.list_directory(path)
 
-func tween():
-#	var tween := create_tween()
-#	tween.set_ease(Tween.EASE_IN_OUT)
-#	tween.set_trans(Tween.TRANS_SINE)
-#	tween.tween_property(self, "current_speed", new_dir, tween_duration)
-	pass
+	for file in files:
+		var full_path = path + "/" + file
+
+		if ResourceLoader.exists(full_path, "Texture2D"):
+			var key := file.get_basename()
+			target_dict[key] = load(full_path)
+		else:
+			# intentar como subcarpeta
+			_load_bugsnaxes(full_path, target_dict)

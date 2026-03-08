@@ -87,6 +87,11 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y38c6"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"chosen",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_052ix")
@@ -350,6 +355,7 @@ script = ExtResource("1_25p0k")
 random_duration = 5.0
 
 [node name="Bugsnax" type="Node2D" parent="." unique_id=250855813]
+visible = false
 position = Vector2(640, 360)
 
 [node name="Background" type="Sprite2D" parent="Bugsnax" unique_id=1403189369]
@@ -360,6 +366,4 @@ texture = ExtResource("2_2cxkw")
 [node name="Random" type="AnimatedSprite2D" parent="Bugsnax" unique_id=1242548625]
 scale = Vector2(0.3251953, 0.3251953)
 sprite_frames = SubResource("SpriteFrames_y38c6")
-animation = &"random"
-frame = 50
-frame_progress = 0.004828168
+animation = &"chosen"
