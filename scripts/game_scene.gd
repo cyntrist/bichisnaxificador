@@ -48,9 +48,9 @@ func on_enable() -> void:
 	if tween_logo_letras_escala:
 		tween_logo_letras_escala.kill()
 	tween_logo_letras_escala = create_tween()
-	tween_logo_letras_escala.set_ease(Tween.EASE_OUT)
+	tween_logo_letras_escala.set_ease(Tween.EASE_IN_OUT)
 	tween_logo_letras_escala.set_trans(Tween.TRANS_SPRING)
-	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 0.5)
+	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 0.6)
 	tween_logo_letras_escala.set_trans(Tween.TRANS_SINE)
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.1,0.9), 0.3)
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.,1), 0.1)

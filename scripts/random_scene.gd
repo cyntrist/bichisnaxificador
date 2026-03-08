@@ -12,8 +12,8 @@ var tween_hover : Tween
 var tween_click : Tween
 var tween_exit_enter : Tween
 var hovering_exit : bool = false
-var hover_scale = Vector2(1.1, 1.1)
-var default_scale = Vector2(1.0, 1.0)
+var hover_scale = Vector2(0.8, 0.8)
+var default_scale = Vector2(0.7, 0.7)
 var tween_hover_duration = 0.2
 
 @export var random_duration :float = 1.0 

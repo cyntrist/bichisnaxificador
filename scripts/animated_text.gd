@@ -8,9 +8,8 @@ var last_visible := 0
 
 func _ready():
 	bbcode_enabled = true
-	install_effect(BounceTextEffect.new()) # NO FUNCIONA
-	text = FULL_TEXT
-	visible_characters = 0
+#	install_effect(BounceTextEffect.new()) # NO FUNCIONA
+#	visible_characters = 0
 
 func reveal_text():
 	var total := get_total_character_count()

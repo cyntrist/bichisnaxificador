@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxi4nw70np4l"]
 
 [ext_resource type="Script" uid="uid://cfhxduk7al4q7" path="res://scripts/new_scene.gd" id="1_iw84y"]
+[ext_resource type="PackedScene" uid="uid://b541gsu1w4v40" path="res://scenes/dibujar.tscn" id="2_gysvl"]
 [ext_resource type="Texture2D" uid="uid://c8d6f638h7vcy" path="res://assets/images/ui/Exit_128x128.png" id="2_qvyla"]
 
 [node name="NewScene" type="Control" unique_id=521462308]
@@ -12,12 +13,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iw84y")
 
+[node name="Dibujar" parent="." unique_id=1170737272 instance=ExtResource("2_gysvl")]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 45.0
+offset_right = 1188.0
+offset_bottom = 200.0
+text = "[rainbow freq=0.18 sat=0.5 val=1 speed=2x][wave amp=50.0 freq=5.0 connected=1]¡Crea un bichisnax![/wave][/rainbow]"
+
 [node name="Exit" type="TextureButton" parent="." unique_id=1493976788]
 modulate = Color(0.9607843, 1, 1, 0)
 layout_mode = 0
-offset_top = -13.0
-offset_right = 128.0
-offset_bottom = 115.0
+offset_left = -16.999998
+offset_top = -21.000002
+offset_right = 111.0
+offset_bottom = 107.0
+scale = Vector2(0.7, 0.7)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_qvyla")
 

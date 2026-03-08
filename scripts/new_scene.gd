@@ -1,11 +1,16 @@
 extends Scene
 
 @onready var exit_button : TextureButton = $Exit
+@onready var dibujar : RichTextLabel = $Dibujar
+@onready var animator : AnimationPlayer = $AnimationPlayer
+@onready var bicho :  = $AnimationPlayer
+@onready var comida :  = $AnimationPlayer
+
 var tween_hover : Tween
 var tween_click : Tween
 var hovering_exit : bool = false
-var hover_scale = Vector2(1.1, 1.1)
-var default_scale = Vector2(1.0, 1.0)
+var hover_scale = Vector2(0.8, 0.8)
+var default_scale = Vector2(0.7, 0.7)
 var tween_hover_duration = 0.2
 
 func on_enable() -> void:
@@ -13,6 +18,12 @@ func on_enable() -> void:
 	tween2.set_trans(Tween.TRANS_SINE)
 	tween2.set_ease(Tween.EASE_IN_OUT)
 	tween2.tween_property(exit_button, "modulate", Color(1,1,1,0.5), 1.0)
+	
+	dibujar.scale = Vector2(0,0)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(dibujar, "scale", Vector2(1,1), 1.0)
 	pass
 	
 func on_disable() -> void:
@@ -60,4 +71,3 @@ func _on_exit_button_up() -> void:
 	tween_click.tween_property(exit_button, "scale", Vector2(1,1), 0.25)
 	Global.change_scene(Global.Scenes.MENU)
 	pass # Replace with function body.
-
