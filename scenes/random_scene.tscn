@@ -373,29 +373,28 @@ texture = ExtResource("85_2cxkw")
 
 [node name="Texto" type="Control" parent="." unique_id=1089702199]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 660.0
+offset_top = 557.0
+offset_right = 660.0
+offset_bottom = 557.0
 
 [node name="Background" type="TextureRect" parent="Texto" unique_id=1023992879]
 layout_mode = 0
-offset_left = 307.0
-offset_top = 486.0
-offset_right = 990.0
-offset_bottom = 687.0
+offset_left = -333.0
+offset_top = -96.0
+offset_right = 350.0
+offset_bottom = 105.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("85_gtulj")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Texto" unique_id=1958772771]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 508.0
-offset_right = 799.0
-offset_bottom = 657.0
+offset_left = -152.0
+offset_top = -73.0
+offset_right = 152.0
+offset_bottom = 76.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("86_2cxkw")

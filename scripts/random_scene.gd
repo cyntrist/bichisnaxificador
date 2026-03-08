@@ -16,6 +16,8 @@ var tween_hover_duration = 0.2
 @export var random_duration :float = 1.0 
 @export var random_scale :Vector2 = Vector2(1.5,1.5) 
 
+var tween_chosen : Tween
+
 func _ready() -> void:
 	pass
 
@@ -60,6 +62,16 @@ func choose():
 	chosen_text_node.visible = true
 	chosen_sprite.visible = true
 	chosen_text.text = format_name(key)
+	
+	tween_chosen = create_tween()
+	tween_chosen.set_trans(Tween.TRANS_BACK)
+	tween_chosen.set_ease(Tween.EASE_IN)
+	tween_chosen.tween_property(random_bug_root, "scale", Vector2(1,1), 0.5)
+	await Global.timer(0.2)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(chosen_text_node, "scale", Vector2(0.8,0.8), 0.5)
 	pass
 	
 func on_disable() -> void:
