@@ -10,6 +10,8 @@ extends Scene
 @onready var exit_button : TextureButton = $Exit
 var tween_hover : Tween
 var tween_click : Tween
+var tween_exit_enter : Tween
+var hovering_exit : bool = false
 var hover_scale = Vector2(1.1, 1.1)
 var default_scale = Vector2(1.0, 1.0)
 var tween_hover_duration = 0.2
@@ -41,10 +43,11 @@ func on_enable() -> void:
 	tween.tween_property(random_bug_root, "scale", random_scale, random_duration)
 	tween.finished.connect(choose)
 	
-	var tween2 = create_tween()
-	tween2.set_trans(Tween.TRANS_SINE)
-	tween2.set_ease(Tween.EASE_IN_OUT)
-	tween2.tween_property(exit_button, "modulate", Color(1,1,1,0.5), 1.0)
+	if not hovering_exit:
+		tween_exit_enter = create_tween()
+		tween_exit_enter.set_trans(Tween.TRANS_SINE)
+		tween_exit_enter.set_ease(Tween.EASE_IN_OUT)
+		tween_exit_enter.tween_property(exit_button, "modulate", Color(1,1,1,0.5), 1.0)
 	pass
 	
 func format_name(key: String) -> String:
@@ -94,6 +97,7 @@ func on_disable() -> void:
 
 
 func _on_exit_mouse_entered() -> void:
+	hovering_exit = true
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
@@ -103,6 +107,7 @@ func _on_exit_mouse_entered() -> void:
 
 
 func _on_exit_mouse_exited() -> void:
+	hovering_exit = false
 	tween_hover = create_tween()
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
