@@ -349,28 +349,15 @@ grow_vertical = 2
 script = ExtResource("1_25p0k")
 random_duration = 5.0
 
-[node name="Bugsnax" type="Control" parent="." unique_id=1504770194]
-visible = false
-anchors_preset = 0
-offset_left = 394.0
-offset_top = 80.0
-offset_right = 952.0
-offset_bottom = 652.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
+[node name="Bugsnax" type="Node2D" parent="." unique_id=250855813]
+position = Vector2(640, 360)
 
-[node name="Background" type="TextureRect" parent="Bugsnax" unique_id=1220493394]
-layout_mode = 0
-offset_left = 93.0
-offset_top = 102.0
-offset_right = 452.0
-offset_bottom = 461.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
+[node name="Background" type="Sprite2D" parent="Bugsnax" unique_id=1403189369]
+position = Vector2(-6.1035156e-05, -3.0517578e-05)
+scale = Vector2(0.7070315, 0.7070315)
 texture = ExtResource("2_2cxkw")
-expand_mode = 1
-stretch_mode = 4
 
 [node name="Random" type="AnimatedSprite2D" parent="Bugsnax" unique_id=1242548625]
-position = Vector2(273, 287)
 scale = Vector2(0.3251953, 0.3251953)
 sprite_frames = SubResource("SpriteFrames_y38c6")
 animation = &"random"
