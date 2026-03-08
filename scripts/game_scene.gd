@@ -174,7 +174,7 @@ func start_aleatorio():
 	await Global.timer(0.2)
 	hide_nuevo()
 	await Global.timer(0.2)
-	hide_logo()
+	hide_logo(Global.Scenes.RANDOM)
 	pass
 
 func start_nuevo():
@@ -182,7 +182,7 @@ func start_nuevo():
 	await Global.timer(0.2)
 	hide_aleatorio()
 	await Global.timer(0.2)
-	hide_logo()
+	hide_logo(Global.Scenes.NEW)
 	pass
 	
 func hide_aleatorio():
@@ -201,7 +201,7 @@ func hide_nuevo():
 	tween_boton_nuevo.set_trans(tween_trans)
 	tween_boton_nuevo.tween_property(boton_nuevo, "position:y", 728, tween_speed)
 	
-func hide_logo():
+func hide_logo(scene : Global.Scenes):
 	if tween_logo_bg: 
 		tween_logo_bg.kill()
 	tween_logo_bg = create_tween()
@@ -216,4 +216,7 @@ func hide_logo():
 	tween_logo_letras.set_ease(tween_ease_disable)
 	tween_logo_letras.set_trans(tween_trans)
 	tween_logo_letras.tween_property(logo_letras, "position:y", -90, tween_speed)
+	tween_logo_letras.finished.connect(func() -> void:
+		Global.change_scene(scene)
+	)
 	pass
