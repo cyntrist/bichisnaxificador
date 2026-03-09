@@ -52,7 +52,7 @@ var nombres_insectos := [
 	"Langosta",
 	"Kril",
 	"Percebe",
-	"Cangrejo herradura",
+	"Cangr. herradura",
 	"Zapatero",
 	"Escorpión",
 	"Luciérnaga",

@@ -72,6 +72,8 @@ func choose():
 	
 	var offset : float = 0
 	var time : float = 0.2
+
+	soundify()
 	
 	tween_chosen = create_tween()
 	tween_chosen.set_trans(Tween.TRANS_BACK)
@@ -92,6 +94,21 @@ func choose():
 	tween3.set_ease(Tween.EASE_IN)
 	tween3.tween_property(chosen_text_node, "position:y", chosen_text_node.position.y - offset, time)
 	pass
+	
+func soundify():
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)	
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)
+	Global.sound.play_sfx("trapcountdown")
+	await Global.timer(0.5)	
+	Global.sound.play_sfx("tutorialpromptv5")
 	
 func on_disable() -> void:
 	Global.bgm.volume_db = 2.0
@@ -156,7 +173,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func play_beep():
-	Global.sound.play_sfx("trapcountdown")
-	
+#	Global.sound.play_sfx("trapcountdown")
+	pass	
 func play_shoot():
-	Global.sound.play_sfx("tutorialpromptv5")
+#	Global.sound.play_sfx("tutorialpromptv5")
+	pass	
