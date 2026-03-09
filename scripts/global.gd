@@ -78,6 +78,12 @@ func _load_bugsnaxes(path: String, target_dict: Dictionary) -> void:
 			var key := file.get_basename()
 			target_dict[key] = load(full_path)
 			
+func play_select_press():
+	sound.play_sfx("selectv3-1", 0.1)
+	
+func play_select_up():
+	sound.play_sfx("selectv3-2", 0.1)
+	
 func play_zoomclick():
 	sound.play_sfx(zoomclicks.pick_random(), 0.1)
 	

@@ -15,7 +15,7 @@ var hovering_exit : bool = false
 var hover_scale = Vector2(0.8, 0.8)
 var default_scale = Vector2(0.7, 0.7)
 var tween_hover_duration = 0.2
-
+var audio : AudioStreamPlayer2D 
 @export var random_duration :float = 1.0 
 @export var random_scale :Vector2 = Vector2(1.5,1.5) 
 
@@ -43,7 +43,7 @@ func on_enable() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(random_bug_root, "scale", random_scale, random_duration)
 	tween.finished.connect(choose)
-	Global.sound.play_sfx("drumroll", 1.2, false)
+	audio = Global.sound.play_sfx("drumroll", 1.2, false)
 	
 	if not hovering_exit:
 		tween_exit_enter = create_tween()
@@ -95,6 +95,7 @@ func choose():
 	
 func on_disable() -> void:
 	Global.bgm.volume_db = 2.0
+	if audio.playing: audio.stop()
 	pass
 
 

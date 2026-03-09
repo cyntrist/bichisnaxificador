@@ -252,7 +252,7 @@ func _on_exit_button_down() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
 	tween_click.tween_property(exit_button, "scale", default_scale - Vector2(0.1,0.1), 0.1)
-	Global.play_zoomclick()
+	Global.play_select_press()
 	pass # Replace with function body.
 
 
@@ -263,7 +263,7 @@ func _on_exit_button_up() -> void:
 	tween_click.set_trans(Tween.TRANS_SPRING)
 	tween_click.tween_property(exit_button, "scale", default_scale, 0.25)
 	Global.change_scene(Global.Scenes.MENU)
-	Global.play_zoomclick_grave()
+	Global.play_select_up()
 	pass # Replace with function body.
 
 
@@ -314,5 +314,5 @@ func _on_retry_button_down() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
 	tween_click.tween_property(retry, "scale", Vector2(0.9,0.9), 0.1)
-	Global.play_zoomclick()
+	Global.play_select_press()
 	pass # Replace with function body.
