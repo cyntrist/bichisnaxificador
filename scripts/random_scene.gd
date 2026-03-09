@@ -26,6 +26,7 @@ func _ready() -> void:
 
 func on_enable() -> void:
 	randomize() 
+	Global.bgm.volume_db = -5
 	random_bug_sprite.play("random")
 	var frame_count = random_bug_sprite.sprite_frames.get_frame_count("random")
 	random_bug_sprite.frame = randi() % frame_count
@@ -92,6 +93,7 @@ func choose():
 	pass
 	
 func on_disable() -> void:
+	Global.bgm.volume_db = 2.0
 	pass
 
 

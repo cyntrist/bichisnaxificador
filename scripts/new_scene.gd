@@ -125,7 +125,12 @@ func _ready() -> void:
 	comida.visible = false
 	bicho.visible = false
 
+func on_disable() -> void:
+	Global.bgm.volume_db = 2
+
 func on_enable() -> void:
+	Global.bgm.volume_db = -5
+
 	dibujar.visible = true
 	var tween2 = create_tween()
 	tween2.set_trans(Tween.TRANS_SINE)
