@@ -143,6 +143,7 @@ func on_enable() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(dibujar, "scale", Vector2(0.9,0.9), 1.5)
 	tween.finished.connect(mostrar_cruz)
+	Global.sound.play_sfx("BouncePad")
 	pass
 	
 	
@@ -174,9 +175,12 @@ func mostrar_cruz():
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(cross, "modulate", Color(1,1,1,1), 0.5)
 	tween.finished.connect(mostrar_bicho)
+	Global.sound.play_sfx("woosh")
+	
 	pass
 	
 func mostrar_bicho():
+	Global.sound.play_sfx("glue", 0.2)
 	bicho.visible = true
 	bicho.scale = big_scale
 	bicho_texto.text = nombres_insectos.pick_random()
@@ -190,6 +194,7 @@ func mostrar_bicho():
 	pass
 	
 func mostrar_comida():
+	Global.sound.play_sfx("glue", 0.2)
 	comida.visible = true
 	comida.scale = big_scale
 	comida_texto.text = nombres_comidas.pick_random()
@@ -216,6 +221,8 @@ func mostrar_boton():
 			rotating = true
 			animator.play("rotate")
 	)
+	Global.sound.play_sfx("transformv6")
+	
 	pass
 	
 	
