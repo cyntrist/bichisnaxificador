@@ -107,6 +107,7 @@ func _on_exit_mouse_entered() -> void:
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.parallel().tween_property(exit_button, "scale", hover_scale, tween_hover_duration)
 	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,1), tween_hover_duration)
+	Global.play_hover()
 	pass # Replace with function body.
 
 
@@ -117,6 +118,7 @@ func _on_exit_mouse_exited() -> void:
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.parallel().tween_property(exit_button, "scale", default_scale, tween_hover_duration)
 	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,0.5), tween_hover_duration)
+	Global.play_unhover()
 	pass # Replace with function body.
 
 

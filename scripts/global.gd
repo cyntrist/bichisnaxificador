@@ -91,7 +91,7 @@ func play_zoomclick_grave():
 	sound.play_sfx(zoomclicks.pick_random(), 0.8, false)
 	
 func play_hover():
-	sound.play_sfx("hoverv2", 0.1)
+	sound.play_sfx("hoverv2", 0.2)
 
 func play_unhover():
-	sound.play_sfx("hoverv2", 0.8, false)
+	sound.play_sfx("hoverv2", 0.7, false, 0.2)

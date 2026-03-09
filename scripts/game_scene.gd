@@ -129,6 +129,7 @@ func _on_aleatorio_mouse_entered() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_aleatorio, "scale", hover_scale, tween_hover_duration)
+	Global.play_hover()
 #	Global.play_zoomclick()
 	pass # Replace with function body.
 
@@ -140,6 +141,7 @@ func _on_aleatorio_mouse_exited() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_aleatorio, "scale", default_scale, tween_hover_duration)
+	Global.play_unhover()
 #	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
@@ -151,6 +153,7 @@ func _on_nuevo_mouse_entered() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_nuevo, "scale", hover_scale, tween_hover_duration)
+	Global.play_hover()
 #	Global.play_zoomclick()
 	pass # Replace with function body.
 
@@ -162,6 +165,7 @@ func _on_nuevo_mouse_exited() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_nuevo, "scale", default_scale, tween_hover_duration)
+	Global.play_unhover()
 #	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 

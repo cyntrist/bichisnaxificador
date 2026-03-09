@@ -236,6 +236,7 @@ func _on_exit_mouse_entered() -> void:
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.parallel().tween_property(exit_button, "scale", hover_scale, tween_hover_duration)
 	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,1), tween_hover_duration)
+	Global.play_hover()
 	pass # Replace with function body.
 
 
@@ -246,6 +247,7 @@ func _on_exit_mouse_exited() -> void:
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.parallel().tween_property(exit_button, "scale", default_scale, tween_hover_duration)
 	tween_hover.parallel().tween_property(exit_button, "modulate", Color(1,1,1,0.5), tween_hover_duration)
+	Global.play_unhover()	
 	pass # Replace with function body.
 
 
@@ -259,7 +261,7 @@ func _on_exit_button_down() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
 	tween_click.tween_property(exit_button, "scale", default_scale - Vector2(0.1,0.1), 0.1)
-	Global.play_select_press()
+	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -270,7 +272,7 @@ func _on_exit_button_up() -> void:
 	tween_click.set_trans(Tween.TRANS_SPRING)
 	tween_click.tween_property(exit_button, "scale", default_scale, 0.25)
 	Global.change_scene(Global.Scenes.MENU)
-	Global.play_select_up()
+	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -280,6 +282,7 @@ func _on_repeat_mouse_entered() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(retry, "scale", hover_scale2, tween_hover_duration)
+	Global.play_hover()
 	pass # Replace with function body.
 
 
@@ -289,6 +292,7 @@ func _on_repeat_mouse_exited() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(retry, "scale", default_scale2, tween_hover_duration)
+	Global.play_hover()
 	pass # Replace with function body.
 
 
@@ -306,6 +310,8 @@ func _on_repeat_button_up() -> void:
 	tween.tween_property(retry_button_shape, "rotation", TAU, 1.0).as_relative()
 	
 	mostrar_bicho()
+	Global.play_select_up()
+	await Global.timer(0.15)
 	Global.sound.play_sfx("woosh", 0.1)
 #	Global.play_zoomclick_grave()
 	pass # Replace with function body.
