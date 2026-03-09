@@ -7,7 +7,7 @@ func on_enable() -> void:
 	await Global.timer(intro_duration)
 	Global.change_scene(Global.Scenes.MENU)
 	Global.bgm.volume_db = 2.0
-	Global.sound.set_sfx_volume_db(8.0)
+	Global.sound.set_sfx_volume_db(5.0)
 	pass
 
 func on_disable() -> void:
