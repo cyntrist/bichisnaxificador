@@ -58,7 +58,7 @@ func on_enable() -> void:
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.95,1.05), 0.1)
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.,1), 0.1)
 	
-#	Global.sound.play_sfx()
+	Global.sound.play_sfx("carton3")
 	
 	await Global.timer(0.2)
 	if tween_logo_bg: 
@@ -75,7 +75,7 @@ func on_enable() -> void:
 	tween_boton_aleatorio.set_ease(tween_ease)
 	tween_boton_aleatorio.set_trans(tween_trans)
 	tween_boton_aleatorio.tween_property(boton_aleatorio, "position:y", 355, tween_speed)
-#	Global.sound.play_sfx()
+	Global.sound.play_sfx("carton3", 1.1, false)
 
 
 	await Global.timer(0.2)
@@ -85,7 +85,7 @@ func on_enable() -> void:
 	tween_boton_nuevo.set_ease(tween_ease)
 	tween_boton_nuevo.set_trans(tween_trans)
 	tween_boton_nuevo.tween_property(boton_nuevo, "position:y", 355, tween_speed)
-#	Global.sound.play_sfx()
+	Global.sound.play_sfx("carton3", 1.2, false)
 	
 	pass
 
@@ -224,9 +224,13 @@ func start_aleatorio():
 
 	hide_aleatorio()
 	await Global.timer(0.2)
+	Global.sound.play_sfx("carton3")
 	hide_nuevo()
 	await Global.timer(0.2)
+	Global.sound.play_sfx("carton3", 0.9, false)
 	hide_logo(Global.Scenes.RANDOM)
+	await Global.timer(0.3)
+	Global.sound.play_sfx("carton3", 0.8, false)
 	pass
 
 func start_nuevo():
@@ -235,9 +239,14 @@ func start_nuevo():
 	
 	hide_nuevo()
 	await Global.timer(0.2)
+	Global.sound.play_sfx("carton3")
 	hide_aleatorio()
 	await Global.timer(0.2)
+	Global.sound.play_sfx("carton3", 0.9, false)
 	hide_logo(Global.Scenes.NEW)
+	Global.sound.play_sfx("carton3", 0.8, false)
+	await Global.timer(0.3)
+	Global.sound.play_sfx("carton3", 0.8, false)
 	pass
 	
 func hide_aleatorio():
