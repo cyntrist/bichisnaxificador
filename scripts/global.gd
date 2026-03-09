@@ -39,8 +39,8 @@ var random = RandomNumberGenerator.new()
 var zoomclicks := [ "zoomclick1", "zoomclick2", "zoomclick3" ]
 
 func _ready() -> void:
-	randomize()
-	load_bugsnaxes_async(sprites_folder)
+	_load_bugsnaxes(sprites_folder, bugsnaxs)
+#	load_bugsnaxes_async(sprites_folder)
 	pass
 
 func  _process(delta: float) -> void:
