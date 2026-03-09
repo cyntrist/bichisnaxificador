@@ -42,6 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_xmg1o")
+intro_duration = 4.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1293887293]
 layout_mode = 1
