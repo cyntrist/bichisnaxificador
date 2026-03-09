@@ -43,6 +43,7 @@ func on_enable() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(random_bug_root, "scale", random_scale, random_duration)
 	tween.finished.connect(choose)
+	Global.sound.play_sfx("drumroll", 1.2, false)
 	
 	if not hovering_exit:
 		tween_exit_enter = create_tween()
@@ -127,7 +128,8 @@ func _on_exit_button_down() -> void:
 	tween_click = create_tween()
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
-	tween_click.tween_property(exit_button, "scale", Vector2(0.9,0.9), 0.1)
+	tween_click.tween_property(exit_button, "scale", default_scale - Vector2(0.1,0.1), 0.1)
+	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -136,8 +138,9 @@ func _on_exit_button_up() -> void:
 	tween_click = create_tween()
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_SPRING)
-	tween_click.tween_property(exit_button, "scale", Vector2(1,1), 0.25)
+	tween_click.tween_property(exit_button, "scale", default_scale, 0.25)
 	Global.change_scene(Global.Scenes.MENU)
+	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -146,3 +149,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		animator.play("rotation")
 		$Dibujar.reveal_text()
 	pass # Replace with function body.
+
+
+
+func play_beep():
+	Global.sound.play_sfx("trapcountdown")
+	
+func play_shoot():
+	Global.sound.play_sfx("tutorialpromptv5")

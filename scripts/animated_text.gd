@@ -21,5 +21,5 @@ func _process(_delta):
 	if visible_characters > last_visible:
 		var diff := visible_characters - last_visible
 		for i in diff:
-			Global.sound.play_sfx("hoehit", 2.0)
+			Global.sound.play_sfx("hoehit", 0.2)
 		last_visible = visible_characters

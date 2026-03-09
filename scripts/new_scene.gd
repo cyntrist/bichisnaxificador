@@ -251,7 +251,8 @@ func _on_exit_button_down() -> void:
 	tween_click = create_tween()
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
-	tween_click.tween_property(exit_button, "scale", Vector2(0.9,0.9), 0.1)
+	tween_click.tween_property(exit_button, "scale", default_scale - Vector2(0.1,0.1), 0.1)
+	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -260,8 +261,9 @@ func _on_exit_button_up() -> void:
 	tween_click = create_tween()
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_SPRING)
-	tween_click.tween_property(exit_button, "scale", Vector2(1,1), 0.25)
+	tween_click.tween_property(exit_button, "scale", default_scale, 0.25)
 	Global.change_scene(Global.Scenes.MENU)
+	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -297,7 +299,8 @@ func _on_repeat_button_up() -> void:
 	tween.tween_property(retry_button_shape, "rotation", TAU, 1.0).as_relative()
 	
 	mostrar_bicho()
-	
+	Global.sound.play_sfx("woosh", 0.1)
+#	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -311,4 +314,5 @@ func _on_retry_button_down() -> void:
 	tween_click.set_ease(Tween.EASE_OUT)
 	tween_click.set_trans(Tween.TRANS_EXPO)
 	tween_click.tween_property(retry, "scale", Vector2(0.9,0.9), 0.1)
+	Global.play_zoomclick()
 	pass # Replace with function body.

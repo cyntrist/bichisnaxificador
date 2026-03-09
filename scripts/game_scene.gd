@@ -100,6 +100,7 @@ func _on_boton_button_down() -> void:
 		tween_logo_click2.kill()
 	$Logo/Fondo.scale = Vector2(0.9, 0.9)
 	$Logo/Logo.scale = Vector2(0.9, 0.9)
+	Global.play_zoomclick()
 #	Global.sound.play_sfx()
 	pass # Replace with function body.
 
@@ -110,6 +111,7 @@ func _on_boton_button_up() -> void:
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property($Logo/Fondo, "scale", Vector2(1,1), 0.25)
 #	Global.sound.play_sfx()
+	Global.play_zoomclick_grave()
 	
 	await Global.timer(0.1)
 	tween_logo_click2 = create_tween()
@@ -127,6 +129,7 @@ func _on_aleatorio_mouse_entered() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_aleatorio, "scale", hover_scale, tween_hover_duration)
+#	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -137,6 +140,7 @@ func _on_aleatorio_mouse_exited() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_aleatorio, "scale", default_scale, tween_hover_duration)
+#	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -147,6 +151,7 @@ func _on_nuevo_mouse_entered() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_nuevo, "scale", hover_scale, tween_hover_duration)
+#	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -157,6 +162,7 @@ func _on_nuevo_mouse_exited() -> void:
 	tween_hover.set_trans(Tween.TRANS_SINE)
 	tween_hover.set_ease(Tween.EASE_OUT)
 	tween_hover.tween_property(boton_nuevo, "scale", default_scale, tween_hover_duration)
+#	Global.play_zoomclick_grave()
 	pass # Replace with function body.
 
 
@@ -171,6 +177,7 @@ func _on_aleatorio_button_down() -> void:
 	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
 	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(0.9,0.9), 0.1)
 #	Global.sound.play_sfx()
+	Global.play_zoomclick()
 	pass # Replace with function body.
 
 
@@ -180,6 +187,7 @@ func _on_aleatorio_button_up() -> void:
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(1,1), 0.25)
 	start_aleatorio()
+	Global.play_zoomclick_grave()
 #	Global.sound.play_sfx()
 	pass # Replace with function body.
 
@@ -194,6 +202,7 @@ func _on_nuevo_button_down() -> void:
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
 	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(0.9,0.9), 0.1)
+	Global.play_zoomclick()
 #	Global.sound.play_sfx()
 	pass # Replace with function body.
 
@@ -204,6 +213,7 @@ func _on_nuevo_button_up() -> void:
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(1,1), 0.25)
 #	Global.sound.play_sfx()
+	Global.play_zoomclick_grave()
 	start_nuevo()
 	pass # Replace with function body.
 
@@ -277,3 +287,4 @@ func hide_logo(scene : Global.Scenes):
 	)
 #	Global.sound.play_sfx()
 	pass
+

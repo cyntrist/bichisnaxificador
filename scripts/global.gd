@@ -36,6 +36,8 @@ var coolDown = 0.5
 var startCoolDown = false
 var random = RandomNumberGenerator.new()
 
+var zoomclicks := [ "zoomclick1", "zoomclick2", "zoomclick3" ]
+
 func _ready() -> void:
 	randomize()
 	load_bugsnaxes_async(sprites_folder)
@@ -75,3 +77,9 @@ func _load_bugsnaxes(path: String, target_dict: Dictionary) -> void:
 		if ResourceLoader.exists(full_path, "Texture2D"):
 			var key := file.get_basename()
 			target_dict[key] = load(full_path)
+			
+func play_zoomclick():
+	sound.play_sfx(zoomclicks.pick_random(), 0.1)
+	
+func play_zoomclick_grave():
+	sound.play_sfx(zoomclicks.pick_random(), 0.8, false)
