@@ -29,7 +29,7 @@ var transitioning : bool = false
 
 ## sonido
 var sfx
-var bgm
+var bgm : AudioStreamPlayer2D
 var sound : SoundManager
 
 var coolDown = 0.5

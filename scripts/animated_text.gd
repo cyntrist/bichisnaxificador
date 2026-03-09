@@ -1,9 +1,9 @@
 extends RichTextLabel
 
-const FULL_TEXT := "[bounce][rainbow freq=0.18 sat=0.5 val=1 speed=0.05][wave amp=50 freq=5 connected=1]¡A dibujar![/wave][/rainbow][/bounce]"
+#const FULL_TEXT := "[bounce][rainbow freq=0.18 sat=0.5 val=1 speed=0.05][wave amp=50 freq=5 connected=1]¡A dibujar![/wave][/rainbow][/bounce]"
 
 @export var duration := 1.5
-const BounceTextEffect = preload("res://effects/bounce_text_effect.gd") #NO FUNCIONA
+#const BounceTextEffect = preload("res://effects/bounce_text_effect.gd") #NO FUNCIONA
 var last_visible := 0
 
 func _ready():
@@ -20,6 +20,6 @@ func reveal_text():
 func _process(_delta):
 	if visible_characters > last_visible:
 		var diff := visible_characters - last_visible
-#		for i in diff:
-#			sfx.play()
+		for i in diff:
+			Global.sound.play_sfx("")
 		last_visible = visible_characters

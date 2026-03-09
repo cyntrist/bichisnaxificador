@@ -9,6 +9,7 @@ var currentScene : Scene
 
 func _ready() -> void:
 	Global.sm = self
+	Global.bgm = $Sound/BGM
 	Global.sound = sound
 	Global.on_transition_end.connect(_on_fade_end)
 	Global.on_transition_begin.connect(_on_fade_begin)

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxi4nw70np4l" path="res://scenes/new_scene.tscn" id="5_m6efm"]
 [ext_resource type="PackedScene" uid="uid://dl5mco075nbxf" path="res://scenes/dots.tscn" id="5_s46hd"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
+[ext_resource type="AudioStream" uid="uid://bl8j5uqpnkhas" path="res://assets/audio/bgm/welcome.wav" id="9_yux3b"]
 
 [node name="State Machine" type="Node" unique_id=1764933967]
 script = ExtResource("1_nj0rb")
@@ -43,5 +44,6 @@ speed = 20.0
 script = ExtResource("7_s46hd")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Sound" unique_id=1286556813]
+stream = ExtResource("9_yux3b")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="Sound" unique_id=522212755]

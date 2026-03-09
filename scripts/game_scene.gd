@@ -58,6 +58,8 @@ func on_enable() -> void:
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.95,1.05), 0.1)
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(1.,1), 0.1)
 	
+#	Global.sound.play_sfx()
+	
 	await Global.timer(0.2)
 	if tween_logo_bg: 
 		tween_logo_bg.kill()
@@ -73,6 +75,8 @@ func on_enable() -> void:
 	tween_boton_aleatorio.set_ease(tween_ease)
 	tween_boton_aleatorio.set_trans(tween_trans)
 	tween_boton_aleatorio.tween_property(boton_aleatorio, "position:y", 355, tween_speed)
+#	Global.sound.play_sfx()
+
 
 	await Global.timer(0.2)
 	if tween_boton_nuevo: 
@@ -81,6 +85,8 @@ func on_enable() -> void:
 	tween_boton_nuevo.set_ease(tween_ease)
 	tween_boton_nuevo.set_trans(tween_trans)
 	tween_boton_nuevo.tween_property(boton_nuevo, "position:y", 355, tween_speed)
+#	Global.sound.play_sfx()
+	
 	pass
 
 func on_disable() -> void:
@@ -94,6 +100,7 @@ func _on_boton_button_down() -> void:
 		tween_logo_click2.kill()
 	$Logo/Fondo.scale = Vector2(0.9, 0.9)
 	$Logo/Logo.scale = Vector2(0.9, 0.9)
+#	Global.sound.play_sfx()
 	pass # Replace with function body.
 
 
@@ -102,12 +109,14 @@ func _on_boton_button_up() -> void:
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property($Logo/Fondo, "scale", Vector2(1,1), 0.25)
+#	Global.sound.play_sfx()
 	
 	await Global.timer(0.1)
 	tween_logo_click2 = create_tween()
 	tween_logo_click2.set_ease(Tween.EASE_OUT)
 	tween_logo_click2.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click2.tween_property($Logo/Logo, "scale", Vector2(1,1), 0.25)
+	
 	pass # Replace with function body.
 
 
@@ -161,6 +170,7 @@ func _on_aleatorio_button_down() -> void:
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
 	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(0.9,0.9), 0.1)
+#	Global.sound.play_sfx()
 	pass # Replace with function body.
 
 
@@ -170,6 +180,7 @@ func _on_aleatorio_button_up() -> void:
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property(boton_aleatorio, "scale", Vector2(1,1), 0.25)
 	start_aleatorio()
+#	Global.sound.play_sfx()
 	pass # Replace with function body.
 
 
@@ -183,6 +194,7 @@ func _on_nuevo_button_down() -> void:
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_EXPO)
 	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(0.9,0.9), 0.1)
+#	Global.sound.play_sfx()
 	pass # Replace with function body.
 
 
@@ -191,6 +203,7 @@ func _on_nuevo_button_up() -> void:
 	tween_logo_click1.set_ease(Tween.EASE_OUT)
 	tween_logo_click1.set_trans(Tween.TRANS_SPRING)
 	tween_logo_click1.tween_property(boton_nuevo, "scale", Vector2(1,1), 0.25)
+#	Global.sound.play_sfx()
 	start_nuevo()
 	pass # Replace with function body.
 
@@ -224,6 +237,7 @@ func hide_aleatorio():
 	tween_boton_aleatorio.set_ease(tween_ease_disable)
 	tween_boton_aleatorio.set_trans(tween_trans_disable)
 	tween_boton_aleatorio.tween_property(boton_aleatorio, "position:y", 728, tween_speed)
+#	Global.sound.play_sfx()	
 	
 func hide_nuevo():
 	if tween_boton_nuevo: 
@@ -232,6 +246,7 @@ func hide_nuevo():
 	tween_boton_nuevo.set_ease(tween_ease_disable)
 	tween_boton_nuevo.set_trans(tween_trans_disable)
 	tween_boton_nuevo.tween_property(boton_nuevo, "position:y", 728, tween_speed)
+#	Global.sound.play_sfx()	
 	
 func hide_logo(scene : Global.Scenes):
 	if tween_logo_bg: 
@@ -240,6 +255,7 @@ func hide_logo(scene : Global.Scenes):
 	tween_logo_bg.set_ease(tween_ease_disable)
 	tween_logo_bg.set_trans(tween_trans_disable)
 	tween_logo_bg.tween_property(logo_fondo, "position:y", -185, tween_speed)
+#	Global.sound.play_sfx()
 
 	if tween_logo_letras_escala:
 		tween_logo_letras_escala.kill()
@@ -247,6 +263,7 @@ func hide_logo(scene : Global.Scenes):
 	tween_logo_letras_escala.set_ease(Tween.EASE_IN)
 	tween_logo_letras_escala.set_trans(Tween.TRANS_BACK)
 	tween_logo_letras_escala.tween_property(logo_letras, "scale", Vector2(0.9,1.1), 1.3)
+#	Global.sound.play_sfx()
 
 	await Global.timer(0.2)
 	if tween_logo_letras:
@@ -258,6 +275,5 @@ func hide_logo(scene : Global.Scenes):
 	tween_logo_letras.finished.connect(func() -> void:
 		Global.change_scene(scene)
 	)
-	
-
+#	Global.sound.play_sfx()
 	pass
