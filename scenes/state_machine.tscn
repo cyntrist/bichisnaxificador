@@ -33,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_a0fpy")
-expand_mode = 2
+expand_mode = 1
 stretch_mode = 4
 
 [node name="Dots" parent="Scenes/Control" unique_id=2027057053 instance=ExtResource("5_s46hd")]
